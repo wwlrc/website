@@ -41,48 +41,6 @@
     <meta name="msapplication-TileColor" content="#00a300">
     <meta name="theme-color" content="#ffffff">
 
-
-
-
-
-    <!-- Schema data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "31st Baskerville Challenge 2022",
-      "startDate": "2021-08-26",
-      "endDate": "2021-08-29",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Baskerville Hall Hotel",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Clyro",
-          "addressLocality": "Hay on Wye",
-          "postalCode": "HR3 5LE",
-          "addressCountry": "UK"
-        }
-      },
-      "image": [
-        "https://baskerville.wwlrc.co.uk/images/Header2.jpg",
-        "https://baskerville.wwlrc.co.uk/images/Advert.jpg"
-       ],
-       "organizer": {
-        "@type": "Organization",
-        "name": "Wye & Welsh Land Rover Club",
-        "url": "https://wwlrc.co.uk"
-      },
-      "description": "The Baskerville Challenge has been running for 33 years by the Wye &amp; Welsh LRC. It is an interclub offroad event. It is held at the Baskerville Hall Hotel, near Hay -on-Wye every year on the August Bank Holiday."
-    }
-    </script>
-    
-    <?php print(genBreadcrumbs($breadcrumbs)); ?>
-
-    
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -154,23 +112,6 @@
 ?>
 
 <body style="background: #dcdcdc">
-
-    <div class="header row justify-content-center" style="margin: 0px;">
-        <div class="<?php print($breakpoints); ?>" style="background: url('images/Header.jpg'); background-position: center; background-size: cover;">
-            <div class="row justify-content-center" style="margin: 0px;">
-                
-              
-                
-                <div class="col-4 col-lg-3 p-2 align-self-center">
-                    <img src="images/Basky_Logo.png" style="width: 100%;">
-                </div>
-                
-              
-            </div>
-        </div>
-    </div>
-    
-
     <nav class="navbar navbar-expand-sm navbar-light navbar-custom">
                 <img src="images/Basky_Logo.png" class="d-inline d-sm-none align-self-start" style="height: 4em;">
                 <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav"

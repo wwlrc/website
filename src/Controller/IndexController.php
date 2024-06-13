@@ -4,6 +4,9 @@ namespace Wwlrc\Website\Controller;
 
 class IndexController extends AbstractController {
     public function page() {
-        echo 'Hello World from the controller';
+        
+        $src = $this->app->getTemplatePath() . "index.php";
+
+        include($this->app->getTemplatePath() . $parent . "abstract/main.php");
     }
 }

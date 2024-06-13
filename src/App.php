@@ -35,4 +35,8 @@ class App
             require __DIR__ . '/../routes/' . $route;
         }
     }
+
+    public function getTemplatePath() {
+        return __DIR__ . '/../templates/';
+    }
 }
