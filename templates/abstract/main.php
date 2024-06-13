@@ -48,8 +48,23 @@
 
     <title><?php print($head_title); ?> | 31st Baskerville Challenge 2022</title>
     <style>
+        body {
+            background-image: url('images/background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .header {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 10px solid rgba(7, 122, 0, 0.9);
+        }
+
         .navbar-custom {
-            background-color: #077A00;
+            /*background-color: #077A00;*/
+            background-color: rgba(200, 200, 200, 0.5)
         }
 
         .nav-item {
@@ -89,7 +104,7 @@
         .footer {
             position:fixed;
             bottom:0px;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9);
             width: 100%;
         }
 
@@ -111,9 +126,15 @@
     $breakpoints = "col-12 col-sm-12 col-md-12 col-lg-8";
 ?>
 
-<body style="background: #dcdcdc">
-    <nav class="navbar navbar-expand-sm navbar-light navbar-custom">
-                <img src="images/Basky_Logo.png" class="d-inline d-sm-none align-self-start" style="height: 4em;">
+<body>
+    <div class="header">
+        <div class="row justify-content-center" style="margin: 0px; width: 100%">
+            <nav class="navbar navbar-expand-md navbar-light navbar-custom <?php print($breakpoints); ?>">
+                <a class="navbar-brand" href="./">
+                    <img src="images/logo.gif" class="d-inline align-self-start" style="height: 3em;">
+                    <span class="d-inline-block" style="vertical-align:middle;; margin-left: 10px;">Wye & Welsh<br>Land Rover Club</span>
+                </a>
+                
                 <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -123,33 +144,21 @@
                         <li class="nav-item active">
                             <a class=" nav-custom nav-link" href="./">Home</a>
                         </li>
-                         <li class="nav-item">
-                            <a class="nav-link nav-custom" href="./booking.php">Booking</a>
+                        <li class="nav-item active">
+                            <a class=" nav-custom nav-link" href="./">Join</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-custom" href="./clothing.php">Clothing</a>
+                        <li class="nav-item active">
+                            <a class=" nav-custom nav-link" target="_blank" href="https://spanner.wwlrc.co.uk/">Events</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-custom" href="./about.php">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-custom" href="./location.php">Location</a>
-                        </li>
-                       
-                        <li class="nav-item">
-                            <a class="nav-link nav-custom" href="./wdw.php">Rules</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-custom" href="./results.php">Results</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-custom" href="https://wwlrc.co.uk/site/sponsors.html">Sponsors</a>
+                        <li class="nav-item active">
+                            <a class=" nav-custom nav-link" href="">Sponsors</a>
                         </li>
                     </ul>
                 </div>
-                
-              
-    </nav>
+            </nav>
+        </div>
+    </div>
+
 
     <div class="row justify-content-center" style="margin: 0px;">
         <div class="<?php print($breakpoints); ?>" style="background:white; padding-top: 20px; padding-bottom: 50px;">
