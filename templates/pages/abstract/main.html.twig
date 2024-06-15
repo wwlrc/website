@@ -17,17 +17,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Facebook Opengraph -->
-    <meta property=”og:title” content="Baskerville Challenge 2020 | <?php print($head_title); ?>" />
+    <meta property=”og:title” content="Wye & Welsh Land Rover Club | {{page_title}}" />
     <meta property="og:description" content="26th - 29th August 2021 | HR3 5LE" />
-    <meta property="og:url" content="https://baskerville.wwlrc.co.uk/<?php print($can); ?>" />
+    <meta property="og:url" content="{{page_canonical}}" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://baskerville.wwlrc.co.uk/images/advert_low.jpg" />
 
     <!-- Search Engines -->
     <meta name="keywords" content="Baskerville, WWLRC, Wye &amp; Welsh, Club, Clwb, Land Rover, Clyro Court Hotel, Off Road, Cymru, ALRC, Challenge, 4x4, MSA, Competition, Trial, Results, Timetable, Location, Venue, Directions, Online, Bookings, Basky, Cymru, Brecon, ">
-    <meta name="description" content="<?php print($description); ?>">
-    <meta name="google-site-verification" content="cHKlIuQvM_B5X4tJ-FQSaDiriwOTUbaJP0YXOTEUSbM" />
-    <link rel="canonical" href="https://baskerville.wwlrc.co.uk/<?php print($can); ?>"/>
+    <meta name="description" content="{{ page_description }}">
+    <meta name="google-site-verification" content="" />
+    <link rel="canonical" href="{{page_canonical}}"/>
     
     <!-- Index rules -->
     <meta name="robots" content="index,nofollow">
@@ -46,7 +46,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         
 
-    <title><?php print($head_title); ?> | 31st Baskerville Challenge 2022</title>
+    <title>{{page_title}} | Wye & Welsh Land Rover Club</title>
     <style>
         body {
             background-image: url('images/background.jpg');
@@ -56,7 +56,7 @@
             background-position: center;
         }
 
-        .header {
+        .page-header {
             width: 100%;
             background: rgba(255, 255, 255, 0.9);
             border-bottom: 10px solid rgba(7, 122, 0, 0.8);
@@ -127,47 +127,19 @@
     </style>
 </head>
 
-<?php
-    $breakpoints = "col-12 col-sm-12 col-md-12 col-lg-8";
-?>
+{%
+    set breakpoints = "col-12 col-sm-12 col-md-12 col-lg-8"    
+%}
 
 <body>
-    <div class="header">
-        <div class="row justify-content-center px-2" style="margin: 0px; width: 100%">
-            <nav class="navbar navbar-expand-md navbar-light navbar-custom <?php print($breakpoints); ?>">
-                <a class="navbar-brand" href="./">
-                    <img src="images/logo.gif" class="d-inline align-self-start" style="height: 3em;">
-                    <span class="d-inline-block" style="vertical-align:middle;; margin-left: 10px;">Wye & Welsh<br>Land Rover Club</span>
-                </a>
-                
-                <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item active">
-                            <a class=" nav-custom nav-link" href="./">Home</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class=" nav-custom nav-link" href="./">Join</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class=" nav-custom nav-link" target="_blank" href="https://spanner.wwlrc.co.uk/">Events</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class=" nav-custom nav-link" href="">Sponsors</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+    <div class="page-header">
+        {% include "pages/partials/navbar.html.twig" %}
     </div>
 
     <div class="body">
         <div class="row justify-content-center mx-2" style="margin-top: 0px;">
-            <div class="<?php print($breakpoints); ?>" style="background:white; padding-top: 20px; padding-bottom: 50px;">
-                <?php include($src); ?>
+            <div class="{{ breakpoints }}" style="background:white; padding-top: 20px; padding-bottom: 50px;">
+                {% block content %}{% endblock %}
             </div>
         </div>
     </div>

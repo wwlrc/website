@@ -16,7 +16,7 @@ class App
     public function run()
     {
         $this->registerRoutes();
-        $this->render = $this->getTwig();
+        $this->view = $this->getTwig();
 
         $this->router->run();
     }
