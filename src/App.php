@@ -3,6 +3,8 @@
 namespace Wwlrc\Website;
 
 use Bramus\Router\Router;
+use Twig\Loader\FilesystemLoader;
+use Twig\Environment;
 
 class App
 {
@@ -14,6 +16,7 @@ class App
     public function run()
     {
         $this->registerRoutes();
+        $this->render = $this->getTwig();
 
         $this->router->run();
     }
@@ -38,5 +41,12 @@ class App
 
     public function getTemplatePath() {
         return __DIR__ . '/../templates/';
+    }
+
+    public function getTwig() {
+        $loader = new FilesystemLoader($this->getTemplatePath());
+        $twig = new Environment($loader);
+
+        return $twig;
     }
 }
