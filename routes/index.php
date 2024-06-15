@@ -11,3 +11,9 @@ $app->router->get('/join', function () {
 
     $controller->page();
 });
+
+$app->router->get('/sponsors', function () {
+    $controller = new Wwlrc\Website\Controller\SponsorsController($this);
+
+    $controller->page();
+});
