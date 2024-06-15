@@ -59,12 +59,13 @@
         .header {
             width: 100%;
             background: rgba(255, 255, 255, 0.9);
-            border-bottom: 10px solid rgba(7, 122, 0, 0.9);
+            border-bottom: 10px solid rgba(7, 122, 0, 0.8);
         }
 
         .navbar-custom {
             /*background-color: #077A00;*/
-            background-color: rgba(200, 200, 200, 0.5)
+            /*background-color: rgba(200, 200, 200, 0.5);
+            border-bottom: 10px solid rgba(7, 122, 0, 0.8);*/
         }
 
         .nav-item {
@@ -101,6 +102,10 @@
             content: "26th - 29th August 2021 | HR3 5LE"
         }
 
+        .body {
+            width: 100%;
+        }
+
         .footer {
             position:fixed;
             bottom:0px;
@@ -128,7 +133,7 @@
 
 <body>
     <div class="header">
-        <div class="row justify-content-center" style="margin: 0px; width: 100%">
+        <div class="row justify-content-center px-2" style="margin: 0px; width: 100%">
             <nav class="navbar navbar-expand-md navbar-light navbar-custom <?php print($breakpoints); ?>">
                 <a class="navbar-brand" href="./">
                     <img src="images/logo.gif" class="d-inline align-self-start" style="height: 3em;">
@@ -159,10 +164,11 @@
         </div>
     </div>
 
-
-    <div class="row justify-content-center" style="margin: 0px;">
-        <div class="<?php print($breakpoints); ?>" style="background:white; padding-top: 20px; padding-bottom: 50px;">
-            <?php include($src); ?>
+    <div class="body">
+        <div class="row justify-content-center mx-2" style="margin-top: 0px;">
+            <div class="<?php print($breakpoints); ?>" style="background:white; padding-top: 20px; padding-bottom: 50px;">
+                <?php include($src); ?>
+            </div>
         </div>
     </div>
 
