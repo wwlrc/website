@@ -5,3 +5,9 @@ $app->router->get('', function () {
 
     $controller->page();
 });
+
+$app->router->get('/join', function () {
+    $controller = new Wwlrc\Website\Controller\JoinController($this);
+
+    $controller->page();
+});
