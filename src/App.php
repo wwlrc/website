@@ -22,7 +22,7 @@ class App
 
     public function run()
     {
-        $this->connection = $this->getDatabase();
+        $this->db = $this->getDB();
 
         $this->session = $this->getSession();
 
@@ -34,14 +34,37 @@ class App
         $this->router->run();
     }
 
-    public function getDatabase() {
+    public function getDB() {
         $config = $this->config;
-        $connection = new \PDO($config->get('database.dsn'), $config->get('database.username'), $config->get('database.password'));
-        return $connection;
+        
+        $capsule = new Capsule();
+
+        // Add each defined connection in the config
+        foreach ($config->getArray('db.connections', []) as $name => $dbConfig) {
+            $capsule->addConnection($dbConfig, $name);
+        }
+
+        // Set default connection
+        $defaultConnection = $config->getString('db.default', '');
+        $capsule->getDatabaseManager()->setDefaultConnection($defaultConnection);
+
+        // Register as global connection
+        $capsule->setAsGlobal();
+
+        // Start Eloquent
+        $capsule->bootEloquent();
+
+        return $capsule->getConnection();
+    }
+
+    public function getConnection() {
+        $connection = $this->db->getDatabaseManager()->getDefaultConnection();
+
+        return $db->getConnection($connection);
     }
 
     public function getSession() {
-        $handler = new DatabaseSessionHandler($this->connection, $config->get('session.database.table'), $config->get('session.minutes'));
+        $handler = new DatabaseSessionHandler($this->getConnection(), $config->get('session.database.table'), $config->get('session.minutes'));
         return new Session($handler, $this->config['session']);
     }
 
