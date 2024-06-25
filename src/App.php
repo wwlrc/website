@@ -7,6 +7,7 @@ use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 use UserFrosting\Support\Repository\Loader\ArrayFileLoader;
 use UserFrosting\Support\Repository\Repository;
+use UserFrosting\Config\Config;
 use UserFrosting\Session\Session;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Database\Capsule\Manager as Capsule;
@@ -110,6 +111,6 @@ class App
         $paths = [$this->getConfigPath() . 'default.php'];
 
         $loader = new ArrayFileLoader($paths);
-        return new Repository($loader->load());
+        return new Config($loader->load());
     }
 }
