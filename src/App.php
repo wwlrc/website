@@ -9,6 +9,7 @@ use UserFrosting\Support\Repository\Loader\ArrayFileLoader;
 use UserFrosting\Support\Repository\Repository;
 use UserFrosting\Session\Session;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Session\FileSessionHandler;
 use Illuminate\Session\DatabaseSessionHandler;
 
