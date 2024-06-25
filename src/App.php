@@ -12,12 +12,16 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Session\FileSessionHandler;
 use Illuminate\Session\DatabaseSessionHandler;
+use Dotenv\Dotenv;
 
 
 class App
 {
     public function __construct()
     {
+        $dotenv = Dotenv::createImmutable(__DIR__. "/../");
+        $dotenv->safeLoad();
+
         $this->config = $this->getConfig();
     }
 
