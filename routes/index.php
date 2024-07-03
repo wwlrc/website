@@ -18,6 +18,12 @@ $app->router->get('/join', function () {
     $controller->page();
 });
 
+$app->router->get('/events', function () {
+    $controller = new Wwlrc\Website\Controller\EventsController($this);
+
+    $controller->page();
+});
+
 $app->router->get('/sponsors', function () {
     $controller = new Wwlrc\Website\Controller\SponsorsController($this);
 
