@@ -6,6 +6,12 @@ $app->router->get('', function () {
     $controller->page();
 });
 
+$app->router->get('/about', function () {
+    $controller = new Wwlrc\Website\Controller\AboutController($this);
+
+    $controller->page();
+});
+
 $app->router->get('/join', function () {
     $controller = new Wwlrc\Website\Controller\JoinController($this);
 
