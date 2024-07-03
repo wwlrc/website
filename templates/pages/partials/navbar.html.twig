@@ -1,30 +1,37 @@
-
-    <nav class="navbar navbar-expand-md navbar-light navbar-custom {{ breakpoints }}">
-        <a class="navbar-brand" href="./">
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
             <img src="images/logo.gif" class="d-inline align-self-start" style="height: 3em;">
             <span class="d-inline-block" style="vertical-align:middle;; margin-left: 10px;">
                 Wye & Welsh<br>Land Rover Club
             </span>
         </a>
-        
-        <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-2">
-                <li class="nav-item m-2 {% if page_title == "Home" %}active{% endif %}">
-                    <a class=" nav-custom nav-link" href="./">Home</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link {% if page_title == "Home" %}active{% endif %}" aria-current="page" href="/">Home</a>
                 </li>
-                <li class="nav-item m-2 {% if page_title == "Join" %}active{% endif %}">
-                    <a class=" nav-custom nav-link" href="./join">Join</a>
+                <li class="nav-item">
+                    <a class="nav-link {% if page_title == "About" %}active{% endif %}" aria-current="page" href="/about">About</a>
                 </li>
-                <li class="nav-item m-2" >
-                    <a class=" nav-custom nav-link" target="_blank" href="https://spanner.wwlrc.co.uk/">Events</a>
+                <li class="nav-item">
+                    <a class="nav-link {% if page_title == "Join" %}active{% endif %}" aria-current="page" href="/join">Join</a>
                 </li>
-                <li class="nav-item m-2">
-                    <a class=" nav-custom nav-link" href="https://spanner.wwlrc.co.uk/account/sign-in">Login</a>
+                <li class="nav-item">
+                    <a class="nav-link {% if page_title == "Sponsors" %}active{% endif %}" aria-current="page" href="/sponsors">Sponsors</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if page_title == "Events" %}active{% endif %}" aria-current="page" href="/events">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" aria-current="page" href="https://spanner.wwlrc.co.uk/account/sign-in">Login <i class="bi bi-escape"></i></a>
                 </li>
             </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+    
