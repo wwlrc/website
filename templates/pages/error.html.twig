@@ -1,0 +1,14 @@
+{% extends "pages/abstract/main.html.twig" %}
+
+{% set page_title = error_code %}
+{% set page_description = "Error Page" %}
+{% set page_canonical = "https://wwlrc.co.uk/" %}
+
+{% block content %}
+
+<h3>{{error_code}}</h3>
+<p>
+{{error_message}}
+</p>
+
+{% endblock %}
