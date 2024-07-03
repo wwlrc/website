@@ -60,12 +60,16 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.9);
             border-bottom: 10px solid rgba(7, 122, 0, 0.8);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
         }
 
         .navbar-custom {
             /*background-color: #077A00;*/
             /*background-color: rgba(200, 200, 200, 0.5);
             border-bottom: 10px solid rgba(7, 122, 0, 0.8);*/
+            padding-left: 0px;
+            padding-right: 0px;
         }
 
         .nav-item {
@@ -80,8 +84,6 @@
             margin-bottom: 5px;
             padding-top: 0.5em;
             padding-bottom: 0.5em;
-
-            border-radius: 5px;
 
             background: #0099cc;
             color: white !important;
@@ -108,14 +110,12 @@
             color: #3c3c3c !important;
         }
 
-
-        .subtitle:before {
-            content: "26th - 29th August 2021 | HR3 5LE"
-        }
-
-        .body {
-            width: 100%;
-            border-radius: 5px;
+        .page-body {
+            background:white; 
+            padding-top: 20px; 
+            padding-bottom: 50px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
         }
 
         .footer {
@@ -144,17 +144,18 @@
 %}
 
 <body>
-    <div class="page-header">
-        {% include "pages/partials/navbar.html.twig" %}
-    </div>
-
     <div class="body">
         <div class="row justify-content-center m-2" style="margin-top: 0px;">
-            <div class="{{ breakpoints }}" style="background:white; border-radius: 5px; padding-top: 20px; padding-bottom: 50px;">
+            <div class="{{ breakpoints }} page-header">
+                {% include "pages/partials/navbar.html.twig" %}
+            </div>
+            <div class="{{ breakpoints }} page-body">
                 {% block content %}{% endblock %}
             </div>
         </div>
     </div>
+
+
 
     <div class="footer p-1" style="background:white;">
         &copy; <a href="https://wwlrc.co.uk">Wye & Welsh LRC</a> {{ "now" | date("Y") }} | <a href="https://www.facebook.com/profile.php?id=100088336113035">Facebook</a>
