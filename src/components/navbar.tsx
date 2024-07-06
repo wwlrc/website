@@ -60,7 +60,7 @@ export default function Navbar() {
                             <NavbarBtn>Events</NavbarBtn>
                         </Link>
                     </li>
-                    <li>
+                    <li className="lg:block md:hidden sm:block">
                         <Link href="/sponsors">
                             <NavbarBtn>Sponsors</NavbarBtn>
                         </Link>
