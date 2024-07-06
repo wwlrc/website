@@ -3,6 +3,8 @@
 import Link from "next/link";
 import NavbarBtn from "./navbar_btn";
 import React, { useEffect } from "react";
+import { usePathname } from "next/navigation";
+
 
 export default function Navbar() {
 
@@ -11,6 +13,12 @@ export default function Navbar() {
     function navbarToggle() {
         setNavbarOpen(!navbarOpen);
     }
+
+    const pathname = usePathname();
+    
+    useEffect(() => {
+        setNavbarOpen(false);
+    }, [pathname]);
 
     return (
         <nav>
