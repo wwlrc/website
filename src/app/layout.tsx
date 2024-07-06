@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="container mx-auto p-3">
+        <div className="max-w-screen-lg mx-auto p-3">
           <div className="bg-white dark:bg-gray-900 dark:bg-opacity-90 bg-opacity-90 p-4 rounded-t-lg">
             <Navbar />
           </div>
