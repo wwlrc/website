@@ -5,7 +5,7 @@ export default function Join() {
     
             <p className="mb-2">
                 If you are interested in joining, feel free to come to one of our events and spectate. 
-                Look at the calendar to see the find what event is on next. To compete, you'll have to become a member, a
+                Look at the calendar to see the find what event is on next. To compete, you&apos;ll have to become a member, a
                 nd your vehicle must meet our regulations. There will be scrutineers you will be able to check this for you.
             </p>
 
@@ -14,7 +14,7 @@ export default function Join() {
             <p className="mb-2">
                 The term of a membership of the Wye and Welsh Land Rover club is on a yearly basis. 
                 Your membership will start in the month you apply, and will be valid for 12 months. 
-                However, if you apply near the end of the month, and you aren't going to compete in 
+                However, if you apply near the end of the month, and you aren&apos;t going to compete in 
                 any events for that month, we can make it valid for the following month.
             </p>
 
