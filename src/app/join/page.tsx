@@ -26,41 +26,37 @@ export default function Join() {
             <table className="table-auto border-gray mb-6">
                 <thead>
                     <tr className="border-b border-grey-700">
-                        <th className="px-4 py-2">Type</th>
-                        <th className="px-4 py-2">Price</th>
+                        <th className="px-4 py-2">Type<br></br><i>Price</i></th>
                         <th className="px-4 py-2">Description</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr className="border-b border-grey-700">
-                        <td className="px-4 py-2">Full</td>
-                        <td className="px-4 py-2">£30.00</td>
+                        <td className="px-4 py-2">Full<br></br><i>&pound;30.00</i></td>
                         <td className="px-4 py-2">Anyone 17 or over, who owns a Land Rover vehicle.</td>
                     </tr>
                     <tr className="border-b border-grey-700">
-                        <td className="px-4 py-2">Family</td>
-                        <td className="px-4 py-2">£10.00</td>
-                        <td className="px-4 py-2">Anyone living with a “Full Member”, has full rights except no paper newsletter.</td>
-                    </tr>
-                    <tr className="border-b border-grey-700">
-                        <td className="px-4 py-2">Associate</td>
-                        <td className="px-4 py-2">£10.00</td>
-                        <td className="px-4 py-2">Anyone with an interest in Land Rover vehicles, no voting rights and NOT
-                                                                                                                                                                                                                                                                                                                                                                                                    allowed to drive or passenger in motor sport events but can marshal, camp and receives a newsletter.</td>
-                    </tr>
-                    <tr className="border-b border-grey-700">
-                        <td className="px-4 py-2">Child</td>
-                        <td className="px-4 py-2">£1.00</td>
+                        <td className="px-4 py-2">Family<br></br><i>&pound;10.00</i></td>
                         <td className="px-4 py-2">
-                            Aged 0 to 11 with a Parent or Guardian who is a FULL member of the Club, able to
-                                                                                                                                                                                                                                                                                                                                                                                take part in any Club activity, which has been organised for them, but does not receive a newsletter, nor vote.</td>
+                            Anyone living with a “Full Member”, has full rights except no paper newsletter.
+                        </td>
                     </tr>
                     <tr className="border-b border-grey-700">
-                        <td className="px-4 py-2">Junior</td>
-                        <td className="px-4 py-2">£1</td>
+                        <td className="px-4 py-2">Associate<br></br><i>&pound;10.00</i></td>
                         <td className="px-4 py-2">
-                            Aged 12 but under 17, as per Child, but can drive and passenger in some
-                                                                                                                                                                                                                                                                                                                                                            competitions, also vote at an AGM.
+                            Anyone with an interest in Land Rover vehicles, no voting rights and NOT allowed to drive or passenger in motor sport events but can marshal, camp and receives a newsletter.
+                        </td>
+                    </tr>
+                    <tr className="border-b border-grey-700">
+                        <td className="px-4 py-2">Child<br></br><i>&pound;1.00</i></td>
+                        <td className="px-4 py-2">
+                            Aged 0 to 11 with a Parent or Guardian who is a FULL member of the Club, able to take part in any Club activity, which has been organised for them, but does not receive a newsletter, nor vote.
+                        </td>
+                    </tr>
+                    <tr className="border-b border-grey-700">
+                        <td className="px-4 py-2">Junior<br></br><i>&pound;1.00</i></td>
+                        <td className="px-4 py-2">
+                            Aged 12 but under 17, as per Child, but can drive and passenger in some competitions, also vote at an AGM.                                                                                                                                                                                                                                                                                                                              competitions, also vote at an AGM.
                         </td>
                     </tr>
                 </tbody>
