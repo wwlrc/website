@@ -30,15 +30,20 @@ export default function Navbar() {
                             <NavbarBtn>About</NavbarBtn>
                         </Link>
                     </li>
-                    
                     <li>
-                    <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
+                        <Link href="/">
+                            <NavbarBtn>Join</NavbarBtn>
+                        </Link>
                     </li>
                     <li>
-                    <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+                        <Link href="/">
+                            <NavbarBtn>Events</NavbarBtn>
+                        </Link>
                     </li>
                     <li>
-                    <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                        <a href="https://spanner.wwlrc.co.uk">
+                            <NavbarBtn>Login</NavbarBtn>
+                        </a>
                     </li>
                 </ul>
                 </div>
