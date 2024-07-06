@@ -51,12 +51,12 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <Link href="/">
+                        <Link href="/join">
                             <NavbarBtn>Join</NavbarBtn>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/">
+                        <Link href="/events">
                             <NavbarBtn>Events</NavbarBtn>
                         </Link>
                     </li>
