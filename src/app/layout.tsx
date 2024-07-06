@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="max-w-md mx-auto">
+          <div className="bg-white border-b border-gray-200 p-2 rounded-t-lg">
+            <p>
+              <Link href="/">
+                Home
+              </Link>
+              <Link href="/about">
+                About
+              </Link>
+            </p>
+          </div>
+          <div className="bg-white p-2">
+            {children}
+          </div>
+          <div className="bg-white rounded-b-lg p-2">
+            &copy; {new Date().getFullYear()} Wye & Welsh Land Rover Club
+          </div>
+        </div>
+        
+        
+        
+      </body>
     </html>
   );
 }
