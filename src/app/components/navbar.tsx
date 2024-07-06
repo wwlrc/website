@@ -39,7 +39,7 @@ export default function Navbar() {
                     </svg>
                 </button>
                 <div hidden={!navbarOpen} className="w-full md:block md:w-auto" id="navbar-default">
-                <ul className="font-medium flex flex-col md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+                <ul className="font-medium flex flex-col md:p-3 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
                     <li>
                         <Link href="/">
                             <NavbarBtn>Home</NavbarBtn>
@@ -61,7 +61,7 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <a href="https://spanner.wwlrc.co.uk">
+                        <a href="https://spanner.wwlrc.co.uk/account/sign-in">
                             <NavbarBtn>Login</NavbarBtn>
                         </a>
                     </li>
