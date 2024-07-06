@@ -4,7 +4,7 @@ import Link from "next/link";
 import NavbarBtn from "./navbar_btn";
 import React, { useEffect } from "react";
 import { usePathname } from "next/navigation";
-
+import Image from "next/image";
 
 export default function Navbar() {
 
@@ -24,7 +24,9 @@ export default function Navbar() {
         <nav>
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
                 <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="/logo.gif" className="h-16 mr-2" alt="Flowbite Logo" />
+                    <div className="relative h-16 w-16 mr-2">
+                    <Image src="./logo.gif" fill={true} alt="Flowbite Logo" />
+                    </div>
                     <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                         Wye & Welsh<br></br>
                         Land Rover Club
