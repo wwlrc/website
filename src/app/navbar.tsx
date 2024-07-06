@@ -3,7 +3,6 @@
 import Link from "next/link";
 import NavbarBtn from "./navbar_btn";
 import React, { useEffect } from "react";
-import { usePathname, useSearchParams } from 'next/navigation'
 
 export default function Navbar() {
 
@@ -12,14 +11,6 @@ export default function Navbar() {
     function navbarToggle() {
         setNavbarOpen(!navbarOpen);
     }
-
-    const pathname = usePathname()
-    const searchParams = useSearchParams()
-    
-    useEffect(() => {
-        setNavbarOpen(false)
-    }, [pathname, searchParams])
-
 
     return (
         <nav>
