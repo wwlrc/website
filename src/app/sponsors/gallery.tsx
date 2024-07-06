@@ -2,10 +2,9 @@
 import { Gallery, Image } from "react-grid-gallery";
 import Whitecliff4x4 from "@/images/sponsors/whitecliff4x4.jpg";
 import { useEffect } from "react";
+import { ThumbnailImageProps } from "react-grid-gallery";
 
-
-
-export default function SponsorGallery() {
+ export default function SponsorGallery() {
     const images = [
         {
             src: "/sponsors/chrishillman.jpg",
@@ -38,19 +37,36 @@ export default function SponsorGallery() {
         }
     ]
 
-    useEffect(() => {
-        // Shuffle images
-        images.sort(() => Math.random() - 0.5)
-    }, [images])
+    images.sort(() => Math.random() - 0.5)
 
-    function sponsorClick(index: number) {
-        const image = images[index] as Image
-        if (image.href) {
-            window.open(image.href, "_blank")
+    const galleryImages : Image[] = images.map((image, index) => {
+        let img: Image = {
+            src: image.src,
+            alt: image.alt,
+            width: 0,
+            height: 0,
         }
-    }
+
+        return img
+    })
+
+    const urls = images.map((image) => {
+        return image.href
+    })
+
+    const ImageComponent = (props: ThumbnailImageProps) => {
+        const url = urls[props.index]
+
+        const { src, alt, style, title } = props.imageProps;
+
+        return (
+          <a href={url} target="_blank">
+              <img alt={alt} src={src} title={title || ""} style={style} />
+          </a>
+        );
+      };
     
     return (
-        <Gallery rowHeight={250} images={images} enableImageSelection={false} onClick={sponsorClick}/>
+        <Gallery rowHeight={300} images={galleryImages} thumbnailImageComponent={ImageComponent} enableImageSelection={false}/>
     )
 }
