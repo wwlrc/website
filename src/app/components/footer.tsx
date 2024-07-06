@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 
 export default function Footer() {
     const sponsors = [
@@ -12,16 +12,22 @@ export default function Footer() {
         "Whitecliff 4X4"
     ];
     
-    const [sponsorIndex, setSponsorIndex] = useState(Math.floor(Math.random() * sponsors.length))
+    const [sponsorIndex, setSponsorIndex] = useState(-1)
 
-    setInterval(() => {
-        sponsorIndex < sponsors.length - 1 ? setSponsorIndex(sponsorIndex + 1) : setSponsorIndex(0)
-    }, 5000)
+    useEffect(() => {
+        setSponsorIndex(Math.floor(Math.random() * sponsors.length))
+
+        const intervalId = setInterval(() => {
+            sponsorIndex < sponsors.length - 1 ? setSponsorIndex(sponsorIndex + 1) : setSponsorIndex(0)
+        }, 5000)
+
+        return () => clearInterval(intervalId); 
+    }, [sponsorIndex])
 
     return (
         <main>
             <p className="mb-2">
-                <Link href="/sponsors">Sponsored by {sponsors[sponsorIndex]}</Link>
+                <Link href="/sponsors">Sponsored by {sponsorIndex == -1 ? "Loading..." : sponsors[sponsorIndex]}</Link>
             </p>
             <p>
                 <a href="https://wwlrc.co.uk/">&copy; {new Date().getFullYear()} Wye & Welsh Land Rover Club</a>
