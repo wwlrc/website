@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import NavbarBtn from "./navbar_btn";
-import React from "react";
+import React, { useEffect } from "react";
+import { usePathname, useSearchParams } from 'next/navigation'
 
 export default function Navbar() {
 
@@ -11,6 +12,14 @@ export default function Navbar() {
     function navbarToggle() {
         setNavbarOpen(!navbarOpen);
     }
+
+    const pathname = usePathname()
+    const searchParams = useSearchParams()
+    
+    useEffect(() => {
+        setNavbarOpen(false)
+    }, [pathname, searchParams])
+
 
     return (
         <nav>
@@ -29,7 +38,7 @@ export default function Navbar() {
                     </svg>
                 </button>
                 <div hidden={!navbarOpen} className="w-full md:block md:w-auto" id="navbar-default">
-                <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+                <ul className="font-medium flex flex-col md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
                     <li>
                         <Link href="/">
                             <NavbarBtn>Home</NavbarBtn>
