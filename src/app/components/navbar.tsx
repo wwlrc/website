@@ -61,6 +61,11 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
+                        <Link href="/sponsors">
+                            <NavbarBtn>Sponsors</NavbarBtn>
+                        </Link>
+                    </li>
+                    <li>
                         <a href="https://spanner.wwlrc.co.uk/account/sign-in">
                             <NavbarBtn>Login</NavbarBtn>
                         </a>
