@@ -1,3 +1,10 @@
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Wye & Welsh LRC | Join",
+    description: "Join the Wye & Welsh Land Rover Club today!"
+  };
+
 export default function Join() {
     return (
         <main>

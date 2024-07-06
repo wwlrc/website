@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Wye & Welsh LRC | About",
+  description: "Learn more about the Wye & Welsh Land Rover Club."
+};
+
 export default function About() {
     return (
       <main>
