@@ -28,7 +28,6 @@ export default function RootLayout({
           <div className="bg-white dark:bg-gray-900 p-4">
             {children}
           </div>
-          <div className="bg-green-600 dark:bg-green-900 h-1"></div>
           <div className="bg-white dark:bg-gray-900 rounded-b-lg p-4">
             <Footer />
           </div>
