@@ -25,7 +25,7 @@ export default function Navbar() {
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
                 <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <div className="relative h-[5em] w-[5em] mr-4">
-                    <Image src="./logo.gif" fill={true} />
+                    <Image src="./logo.gif" alt="Logo" fill={true} />
                     </div>
                     <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                         Wye & Welsh<br></br>
