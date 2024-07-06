@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
-        <div className="bg-white rounded-b-lg p-2">
-            &copy; {new Date().getFullYear()} Wye & Welsh Land Rover Club
-        </div>
+        <main>
+            <a href="https://wwlrc.co.uk/">&copy; {new Date().getFullYear()} Wye & Welsh Land Rover Club</a>
+        </main>
     )
 }
