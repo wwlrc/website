@@ -3,6 +3,7 @@ import Link from "next/link";
 import { use, useEffect, useState } from "react";
 
 export default function Footer() {
+
     const sponsors = [
         "Chris Hillman",
         "Caldicot Windows & Building Services",
@@ -22,7 +23,7 @@ export default function Footer() {
         }, 5000)
 
         return () => clearInterval(intervalId); 
-    }, [sponsorIndex])
+    }, [])
 
     return (
         <main>
