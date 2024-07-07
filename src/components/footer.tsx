@@ -15,11 +15,17 @@ export default function Footer() {
     
     const [sponsorIndex, setSponsorIndex] = useState(-1)
 
+    function switchSponsor() {
+        let index = Math.floor(Math.random() * sponsors.length)
+
+        setSponsorIndex(index)
+    }
+
     useEffect(() => {
-        setSponsorIndex(Math.floor(Math.random() * sponsors.length))
+        switchSponsor()
 
         const intervalId = setInterval(() => {
-            sponsorIndex < sponsors.length - 1 ? setSponsorIndex(sponsorIndex + 1) : setSponsorIndex(0)
+            switchSponsor()
         }, 5000)
 
         return () => clearInterval(intervalId); 
