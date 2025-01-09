@@ -18,11 +18,14 @@ export default function SpannerBlog() {
     if (isLoading) return <p>Loading...</p>
     if(!posts) return <p>No Blog Posts :/</p>
 
-    return (
-        <ul>
-            {posts.map(id, post => (
-                <li>{post.title}</li>
+    return (<div>
+            {posts.map((post, id) => (
+                <div key={id}>
+                    <h3 className="text-l font-bold mt-2">{post.title}</h3>
+                    <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+                    <p className="text-sm"><i>Created at {post.created_at} by {post.author.first_name} {post.author.last_name}</i></p>
+                </div>
             ))}
-        </ul>
+        </div>
     )
 }
