@@ -1,25 +1,25 @@
 "use client";
 import Link from "next/link";
-import { use, useEffect, useState } from "react";
+import { use, useEffect, useState, useCallback, useMemo } from "react";
 
 export default function Footer() {
 
-    const sponsors = [
+    const sponsors = useMemo(() => { return [
         "Chris Hillman",
         "Caldicot Windows & Building Services",
         "Abergavenny Brake & Clutch",
         "Foundry 4x4",
         "Muddy Series 4X4 Parts",
         "Whitecliff 4X4"
-    ];
+    ]}, []);
     
     const [sponsorIndex, setSponsorIndex] = useState(-1)
 
-    function switchSponsor() {
+    const switchSponsor = useCallback(() => {
         let index = Math.floor(Math.random() * sponsors.length)
 
         setSponsorIndex(index)
-    }
+    }, [sponsors])
 
     useEffect(() => {
         switchSponsor()
@@ -29,7 +29,7 @@ export default function Footer() {
         }, 5000)
 
         return () => clearInterval(intervalId); 
-    }, [])
+    }, [switchSponsor])
 
     return (
         <main>
