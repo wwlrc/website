@@ -4,6 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="preload" as="image" href="background.jpg"></link>
+      </Head>
       <body className={inter.className}>
         <div className="max-w-screen-lg mx-auto p-3">
           <div className="bg-white dark:bg-gray-900 dark:bg-opacity-90 bg-opacity-90 p-4 rounded-t-lg">
