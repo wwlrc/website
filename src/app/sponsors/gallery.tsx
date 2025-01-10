@@ -3,6 +3,7 @@ import { Gallery, Image } from "react-grid-gallery";
 import Whitecliff4x4 from "@/images/sponsors/whitecliff4x4.jpg";
 import { useEffect } from "react";
 import { ThumbnailImageProps } from "react-grid-gallery";
+import NImage from "next/image";
 
  export default function SponsorGallery() {
     const images = [
@@ -61,7 +62,7 @@ import { ThumbnailImageProps } from "react-grid-gallery";
 
         return (
           <a href={url} target="_blank">
-              <img alt={alt} src={src} title={title || ""} style={style} />
+              <NImage alt={alt} src={src} title={title || ""} style={style} />
           </a>
         );
       };
