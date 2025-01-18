@@ -1,25 +1,21 @@
 "use client";
 
 import { useState, useEffect } from 'react'
+import { getPosts } from './api_client';
 
-export default function SpannerBlog() {
-    const [posts, setPosts] = useState([])
+export default function SpannerBlog({ staticPosts }: any) {
+    const [posts, setPosts] = useState(staticPosts)
     const [isLoading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch('https://spanner.wwlrc.co.uk/api/clubs/c/2/blog_posts')
-            .then((res) => res.json())
-            .then((data) => {
-                setPosts(data.rows)
-                setLoading(false)
-            })
-        }, [])
+        getPosts().then((posts) => {
+            setPosts(posts)
+        })
+    }, [])
 
-    if (isLoading) return <p>Loading...</p>
     if(!posts) return <p>No Blog Posts :/</p>
-
     return (<div>
-            {posts.map((post, id) => (
+            {posts.map((post: any, id: number) => (
                 <div key={id}>
                     <h3 className="text-l font-bold mt-2">{post.title}</h3>
                     <div dangerouslySetInnerHTML={{ __html: post.content }}></div>

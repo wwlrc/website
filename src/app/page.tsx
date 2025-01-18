@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import SpannerBlog from "../components/spanner_blog"
+import SpannerBlog from "@/components/blog/blog";
+import { getPosts } from "@/components/blog/api_client";
 
 export const metadata: Metadata = {
   title: "Wye & Welsh LRC | Home",
 };
 
-export default function Home() {
+export default async function Home() {
+  // This is fine because we're statically exporting anyway
+  let posts = await getPosts();
+
   return (
     <main>
       <h1 className="text-2xl font-bold">Home</h1>
@@ -14,7 +18,7 @@ export default function Home() {
 
       <h2 className="text-xl font-bold mt-2">Latest News</h2>
       
-      <SpannerBlog />
+      <SpannerBlog staticPosts={posts}/>
     </main>
   );
 }
