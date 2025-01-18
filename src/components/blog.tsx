@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from 'react'
-import { getPosts } from './api_client';
+import { getPosts } from '@/spanner/blog';
 
 export default function SpannerBlog({ staticPosts }: any) {
     const [posts, setPosts] = useState(staticPosts)

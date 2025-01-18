@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import SpannerBlog from "@/components/blog/blog";
-import { getPosts } from "@/components/blog/api_client";
+import SpannerBlog from "@/components/blog";
+import { getPosts } from "@/spanner/blog";
 
 export const metadata: Metadata = {
   title: "Wye & Welsh LRC | Home",
