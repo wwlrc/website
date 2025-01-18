@@ -1,16 +1,27 @@
 "use client";
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { getPosts } from './api_client';
 
 export default function SpannerBlog({ staticPosts }: any) {
     const [posts, setPosts] = useState(staticPosts)
     const [isLoading, setLoading] = useState(true)
 
-    useEffect(() => {
+
+    const updatePosts = () => {
         getPosts().then((posts) => {
             setPosts(posts)
         })
+    }
+
+    useEffect(() => {
+        updatePosts()
+
+        const intervalId = setInterval(() => {
+            updatePosts()
+        }, 60*1000)
+
+        return () => clearInterval(intervalId); 
     }, [])
 
     if(!posts) return <p>No Blog Posts :/</p>
