@@ -1,7 +1,5 @@
 "use client";
 import { Gallery, Image } from "react-grid-gallery";
-import Whitecliff4x4 from "@/images/sponsors/whitecliff4x4.jpg";
-import { useEffect } from "react";
 import { ThumbnailImageProps } from "react-grid-gallery";
 import NImage from "next/image";
 
@@ -40,34 +38,7 @@ import NImage from "next/image";
 
     images.sort(() => Math.random() - 0.5)
 
-    const galleryImages : Image[] = images.map((image, index) => {
-        let img: Image = {
-            src: image.src,
-            alt: image.alt,
-            width: 0,
-            height: 0,
-        }
-
-        return img
-    })
-
-    const urls = images.map((image) => {
-        return image.href
-    })
-
-    const ImageComponent = (props: ThumbnailImageProps) => {
-        const url = urls[props.index]
-
-        const { src, alt, style, title } = props.imageProps;
-
-        return (
-          <a href={url} target="_blank">
-              <NImage alt={alt} src={src} title={title || ""} style={style} />
-          </a>
-        );
-      };
-    
     return (
-        <Gallery rowHeight={300} images={galleryImages} thumbnailImageComponent={ImageComponent} enableImageSelection={false}/>
+        <main>TODO</main>
     )
 }
