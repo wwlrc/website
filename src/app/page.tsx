@@ -18,7 +18,9 @@ export default async function Home() {
 
       <h2 className="text-xl font-bold mt-2">Latest News</h2>
       
-      <SpannerBlog staticPosts={posts}/>
+      <div className="mt-2">
+        <SpannerBlog staticPosts={posts}/>
+      </div>
     </main>
   );
 }

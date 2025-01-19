@@ -28,9 +28,15 @@ export default function SpannerBlog({ staticPosts }: any) {
     return (<div>
             {posts.map((post: any, id: number) => (
                 <div key={id}>
-                    <h3 className="text-l font-bold mt-2">{post.title}</h3>
-                    <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
-                    <p className="text-sm"><i>Created at {post.created_at} by {post.author.first_name} {post.author.last_name}</i></p>
+                    <div className="mb-2 border-solid border-grey-200 dark:border-grey-700 rounded-lg border">
+                        <div className="bg-gray-700 dark:bg-gray-800 px-2 py-3 border-solid border-grey-200 dark:border-grey-700 border-b rounded-t-md">
+                            <h3 className="text-l text-white font-bold ">{post.title}</h3>
+                        </div>
+                        <div className="p-3">
+                            <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+                            <p className="text-sm mt-2"><i>Created at {(new Date(post.created_at)).toLocaleString()} by {post.author.first_name} {post.author.last_name}</i></p>
+                        </div>
+                    </div>
                 </div>
             ))}
         </div>
