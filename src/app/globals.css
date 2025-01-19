@@ -14,6 +14,15 @@
   }
 }
 
+html {
+  /* 
+  * This forces the scrollbar to stay on all the time,
+  * so it doesn't change the width of the page, and thus
+  * everything else
+  */
+  overflow-y: scroll;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background-image: url('/background.jpg');
