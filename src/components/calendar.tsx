@@ -52,6 +52,14 @@ function renderLocation(location: any) {
 }
 
 export default function SpannerCalendar({ staticEvents }: any) {
+    // Remove all event status data to avoid an event being shown
+    // as still open, when it is actually closed
+    staticEvents = staticEvents.map((event: any) => { 
+        event.bookings_status = 'not-known'
+        
+        return event 
+    })
+
     const [events, setEvents] = useState(staticEvents)
     
     const updateEvents = () => {
