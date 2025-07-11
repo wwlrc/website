@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.13",
-    "next": "15.1.4",
+    "next": "^15.3.5",
     "pathcat": "^1.4.0",
     "react": "^19",
     "react-dom": "^19",
