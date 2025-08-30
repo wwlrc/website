@@ -4,7 +4,8 @@ export async function getEvents() {
   );
   let data = await res.json();
 
-  let events = data.rows.sort(function (a: any, b: any): number {
+  let events = data.rows != undefined ? data.rows : [];
+  events.sort(function (a: any, b: any): number {
     let aStartDate = new Date(a.start_date);
     let bStartDate = new Date(b.start_date);
     return aStartDate.getTime() - bStartDate.getTime();
