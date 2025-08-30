@@ -31,7 +31,7 @@ function renderStatus(event: any) {
         href={pathcat("https://spanner.wwlrc.co.uk", "/rallies/r/:id", event)}
         target="_blank"
       >
-        <button className="px-2 py-2 bg-blue-600 text-white font-bold rounded-lg text-sm">
+        <button className="px-2 py-1 bg-blue-600 text-white font-bold rounded-lg text-sm">
           Opening Soon
         </button>
       </a>
@@ -44,7 +44,7 @@ function renderStatus(event: any) {
         href={pathcat("https://spanner.wwlrc.co.uk", "/rallies/r/:id", event)}
         target="_blank"
       >
-        <button className="px-2 py-2 bg-red-600 text-white font-bold rounded-lg text-sm">
+        <button className="px-2 py-1 bg-red-600 text-white font-bold rounded-lg text-sm">
           Bookings Closed
         </button>
       </a>
@@ -57,7 +57,7 @@ function renderStatus(event: any) {
         href={pathcat("https://spanner.wwlrc.co.uk", "/rallies/r/:id", event)}
         target="_blank"
       >
-        <button className="px-2 py-2 bg-green-600 text-white font-bold rounded-lg hover:bg-green-200">
+        <button className="px-2 py-1 bg-green-600 text-white font-bold rounded-lg text-sm hover:bg-green-200">
           Book Now
         </button>
       </a>
@@ -140,10 +140,10 @@ export default function SpannerCalendar({ staticEvents }: any) {
                   );
                 }}
               >
-                <td className="px-2 py-1 md:px-4 md:py-2 border border-solid border-gray-200 dark:border-gray-600 hidden md:table-cell">
+                <td className="px-2 py-2 md:px-4 md:py-3 border border-solid border-gray-200 dark:border-gray-600 hidden md:table-cell">
                   {renderDate(event)}
                 </td>
-                <td className="px-2 py-1 md:px-4 md:py-2 border border-solid border-gray-200 dark:border-gray-600">
+                <td className="px-2 py-2 md:px-4 md:py-3 border border-solid border-gray-200 dark:border-gray-600">
                   <p className="md:hidden">
                     <strong>{renderDate(event)}</strong>
                   </p>
@@ -152,7 +152,7 @@ export default function SpannerCalendar({ staticEvents }: any) {
                 <td className="px-2 py-1 md:px-4 md:py-2 border border-solid border-gray-200 dark:border-gray-600 text-center">
                   {renderStatus(event)}
                 </td>
-                <td className="px-2 py-1 md:px-4 md:py-2 border border-solid border-gray-200 dark:border-gray-600 hidden md:table-cell">
+                <td className="px-2 py-2 md:px-4 md:py-3 border border-solid border-gray-200 dark:border-gray-600 hidden md:table-cell">
                   {renderLocation(event.location)}
                 </td>
               </tr>
