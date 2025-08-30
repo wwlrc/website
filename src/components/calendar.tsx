@@ -71,12 +71,6 @@ function renderLocation(location: any) {
   return location.name + " (" + location.postcode + ")";
 }
 
-function cmpEvents(a: any, b: any): boolean {
-  a = new Date(a.start_date);
-  b = new Date(b.start_date);
-  return a > b;
-}
-
 export default function SpannerCalendar({ staticEvents }: any) {
   // Remove all event status data to avoid an event being shown
   // as still open, when it is actually closed
@@ -84,13 +78,11 @@ export default function SpannerCalendar({ staticEvents }: any) {
     event.bookings_status = "not-known";
     return event;
   });
-  staticEvents.sort(cmpEvents);
 
   const [events, setEvents] = useState(staticEvents);
 
   const updateEvents = () => {
     getEvents().then((events) => {
-      events.sort(cmpEvents);
       setEvents(events);
     });
   };
