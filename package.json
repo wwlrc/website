@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.13",
+    "lucide-react": "^0.542.0",
     "next": "^15.3.5",
     "pathcat": "^1.4.0",
     "react": "^19",
