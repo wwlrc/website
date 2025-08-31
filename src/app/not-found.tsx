@@ -1,11 +1,11 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { Metadata } from 'next'
+import Link from "next/link";
+import Image from "next/image";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Wye & Welsh LRC | Page Not Found",
-  };
- 
+  title: "Wye & Welsh LRC | Page Not Found",
+};
+
 export default function NotFound() {
   return (
     <main>
@@ -13,5 +13,5 @@ export default function NotFound() {
       <p className="mb-4">The requested page could not be found :/</p>
       <Image src="/404.webp" alt="404" width={500} height={500} />
     </main>
-  )
+  );
 }
