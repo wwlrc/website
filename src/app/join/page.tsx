@@ -111,7 +111,7 @@ export default function Join() {
                 }}
             >
                 <table className="table-auto border-gray w-full min-w-[768px] bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden">
-                    <thead>
+                    <thead className="bg-gray-200 dark:bg-gray-600">
                         <tr className="border-b border-grey-700">
                             <th className="px-2 py-2 w-8" rowSpan={2}>Type<br /><i>Price</i></th>
                             <th className="px-2 py-2 w-64" rowSpan={2}>Description</th>
@@ -146,7 +146,7 @@ export default function Join() {
                             </tr>
                         ))}
                     </tbody>
-                    <tfoot>
+                    <tfoot className="bg-gray-200 dark:bg-gray-600">
                         <tr>
                             <td className="px-2 py-2" colSpan={6}>
                                 *<i>Age requirements may vary depending on the event.</i>
