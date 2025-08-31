@@ -89,7 +89,7 @@ export default function Join() {
             <h1 className="text-2xl font-bold mb-3">Join</h1>
     
             <p className="mb-2">
-                If you are interested in joining, you're welcome to come along to  
+                If you are interested in joining, you&apos;re welcome to come along to  
                 <a href="/events" target="_blank"> one of our events</a> and spectate. 
                 Look at the calendar to see the find what event is on next. To compete, 
                 you&apos;ll have to become a member, and your vehicle must meet our 
