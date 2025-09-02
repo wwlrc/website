@@ -171,7 +171,6 @@ export default function Join() {
           </tfoot>
         </table>
       </div>
-
       <h3 className="text-xl font-bold mb-3 mt-4">Applying for Membership</h3>
       <p className="mb-2 mt-2">
         If you would like to join, you can fill out our online membership form

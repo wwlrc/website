@@ -14,12 +14,14 @@ export default async function Home() {
     <main>
       <h1 className="text-2xl font-bold">Home</h1>
 
-      <p className="mb-2">Welcome to the Wye & Welsh Land Rover Club website!</p>
+      <p className="mb-2">
+        Welcome to the Wye & Welsh Land Rover Club website!
+      </p>
 
       <h2 className="text-xl font-bold mt-2">Latest News</h2>
-      
+
       <div className="mt-2">
-        <SpannerBlog staticPosts={posts}/>
+        <SpannerBlog staticPosts={posts} />
       </div>
     </main>
   );

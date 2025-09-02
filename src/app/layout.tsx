@@ -10,7 +10,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Wye & Welsh LRC",
-  description: "Welcome to the Wye & Welsh Land Rover Club website. Visit this website to see the latest news, events and photos.",
+  description:
+    "Welcome to the Wye & Welsh Land Rover Club website. Visit this website to see the latest news, events and photos.",
 };
 
 export default function RootLayout({
@@ -29,14 +30,12 @@ export default function RootLayout({
             <Navbar />
           </div>
           <div className="bg-green-600 dark:bg-green-900 h-0.5"></div>
-          <div className="bg-white dark:bg-gray-900 p-4">
-            {children}
-          </div>
+          <div className="bg-white dark:bg-gray-900 p-4">{children}</div>
           <div className="bg-gray-400 dark:bg-gray-700 h-0.5"></div>
           <div className="bg-white dark:bg-gray-900 rounded-b-lg p-4">
             <Footer />
           </div>
-        </div>   
+        </div>
       </body>
     </html>
   );
