@@ -1,4 +1,6 @@
-import { Download } from "lucide-react";
+import { pathWildcat } from "@/spanner/api";
+import { wwlrcClubId } from "@/spanner/wwlrc";
+import { Download, ExternalLinkIcon } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -169,27 +171,36 @@ export default function Join() {
           </tfoot>
         </table>
       </div>
-
-      <p className="mb-2">
+      <h3 className="text-xl font-bold mb-3 mt-4">Applying for Membership</h3>
+      <p className="mb-2 mt-2">
         If you would like to join, you can fill out our online membership form
         below.
       </p>
-      <p className="mb-2">
+      <p className="mb-3">
+        <a
+          href={pathWildcat("clubs/c/:clubId/membership_application", {
+            clubId: wwlrcClubId,
+          })}
+          target="_blank"
+          className="inline-flex items-center w-128 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors font-medium"
+        >
+          Fill in an online membership form
+          <ExternalLinkIcon className="ml-2" />
+        </a>
+      </p>
+      <p className="mb-2 mt-2">
         Alternatively, you can print out a paper membership form and mail it to
         us:
       </p>
-
-      <p className="mb-3">
+      <p className="mb-2">
         <a
-          href=""
-          className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors font-medium"
+          href="/MembershipForm.pdf"
+          target="_blank"
+          className="inline-flex items-center px-2 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors font-medium"
         >
           Download a Paper Membership Form <Download className="ml-2" />
         </a>
       </p>
-
-      <h3 className="text-2xl font-bold mb-3">Membership Application</h3>
-      <p>Application form here...</p>
     </main>
   );
 }
