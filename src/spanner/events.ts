@@ -1,10 +1,15 @@
-export async function getEvents() {
-  let res = await fetch(
-    "https://spanner.wwlrc.co.uk/api/clubs/c/2/rallies?size=25&page=0&sorts[start_date]=desc",
-  );
-  let data = await res.json();
+import { spannerApiFetch } from "./api";
+import { wwlrcClubId } from "./wwlrc";
 
-  let events = data.rows != undefined ? data.rows : [];
+export async function getEvents() {
+  let data = await spannerApiFetch("api/clubs/c/:clubId/rallies", {
+    clubId: wwlrcClubId,
+    size: 25,
+    page: 0,
+    "sorts[start_date]": "desc",
+  });
+
+  let events = data.rows == null ? [] : data.rows;
   events.sort(function (a: any, b: any): number {
     let aStartDate = new Date(a.start_date);
     let bStartDate = new Date(b.start_date);
