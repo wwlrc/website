@@ -34,14 +34,15 @@ jobs:
         run: npm ci
       - name: Build with Next.js
         run: npx --no-install next build
+      - name: Add .htaccess
+        run: cp deployment/htaccess.txt .htaccess
       - name: Install lftp
         run: sudo apt-get install lftp
       - name: Upload
         run: |
-          lftp -e "
+          lftp -e -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_HOST}} "
             set ftp:ssl-allow yes;
             set ftp:ssl-force yes;
             set ftp:ssl-protect-data true;
-            mirror -c -e --parallel=5 --verbose ./ -o ./;
+            mirror -c -e -R --delete --parallel=5 --verbose ./ ./;
             quit"
-          -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_HOST}}
