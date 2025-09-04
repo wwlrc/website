@@ -34,11 +34,14 @@ jobs:
         run: npm ci
       - name: Build with Next.js
         run: npx --no-install next build
-      - name: Upload ftp
-        uses: sebastianpopp/ftp-action@releases/v2
-        with:
-          host: ${{ secrets.FTP_HOST }}
-          user: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          options: "--delete --asci"
-          forceSsl: true
+      - name: Install lftp
+        run: sudo apt-get install lftp
+      - name: Upload
+        run: |
+          lftp -e "
+            set ftp:ssl-allow yes;
+            set ftp:ssl-force yes;
+            set ftp:ssl-protect-data true;
+            mirror -c -e --parallel=5 --verbose ./ -o ./;
+            quit"
+          -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_HOST}}
