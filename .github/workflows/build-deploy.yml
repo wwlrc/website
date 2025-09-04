@@ -34,11 +34,11 @@ jobs:
         run: npm ci
       - name: Build with Next.js
         run: npx --no-install next build
-      - name: Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+      - name: Upload ftp
+        uses: sebastianpopp/ftp-action@releases/v2
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
+          host: ${{ secrets.FTP_HOST }}
+          user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          dry-run: true
+          options: "--delete --asci"
+          forceSsl: true
