@@ -35,7 +35,7 @@ jobs:
       - name: Build with Next.js
         run: npx --no-install next build
       - name: Add .htaccess
-        run: cp deployment/htaccess.txt .htaccess
+        run: cp deployment/htaccess.txt out/.htaccess
       - name: Install lftp
         run: sudo apt-get install lftp
       - name: Upload
@@ -44,6 +44,6 @@ jobs:
             set ftp:ssl-allow yes;
             set ftp:ssl-force yes;
             set ftp:ssl-protect-data true;
-            mirror -c -e -R --delete --parallel=5 --verbose ./ ./;
+            mirror -c -e -R --delete --no-perms --parallel=5 --verbose ./out/ ./;
             quit
           EOF
