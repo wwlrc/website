@@ -178,7 +178,7 @@ export default function Join() {
       </p>
       <p className="mb-3">
         <a
-          href={pathWildcat("clubs/c/:clubId/membership_application", {
+          href={pathWildcat("clubs/c/:clubId/membership_request", {
             clubId: wwlrcClubId,
           })}
           target="_blank"
