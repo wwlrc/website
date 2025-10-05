@@ -81,7 +81,7 @@ export default function Join() {
       price: "£1",
       requirements:
         "Aged 0 to 11 with a Parent or Guardian who is a full member",
-      competes: MembershipRight.Yes,
+      competes: MembershipRight.YesAge,
       newsletter: MembershipRight.No,
       marshals: MembershipRight.No,
       votes: MembershipRight.No,
