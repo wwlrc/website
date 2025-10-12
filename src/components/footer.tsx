@@ -5,7 +5,6 @@ import { use, useEffect, useState, useCallback, useMemo } from "react";
 export default function Footer() {
   const sponsors = useMemo(() => {
     return [
-      "Chris Hillman",
       "Caldicot Windows & Building Services",
       "Abergavenny Brake & Clutch",
       "Foundry 4x4",

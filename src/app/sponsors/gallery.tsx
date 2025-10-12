@@ -14,11 +14,6 @@ export default function SponsorGallery() {
   useEffect(() => {
     let images: Sponsor[] = [
       {
-        src: "/sponsors/chrishillman.jpg",
-        alt: "Chris Hillman",
-        href: null,
-      },
-      {
         src: "/sponsors/abc.jpg",
         alt: "Abergavenny Brake & Clutch",
         href: "http://www.abcmotorfactors.com/",
