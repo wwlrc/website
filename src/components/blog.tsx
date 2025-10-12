@@ -23,7 +23,13 @@ export default function SpannerBlog({ staticPosts }: any) {
     return () => clearInterval(intervalId);
   }, []);
 
-  if (!posts) return <p>No Blog Posts :/</p>;
+  if (posts.length == 0)
+    return (
+      <p>
+        <i>Looks like there&apos;s no news to report :/</i>
+      </p>
+    );
+
   return (
     <div>
       {posts.map((post: any, id: number) => (
