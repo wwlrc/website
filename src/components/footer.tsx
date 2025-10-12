@@ -7,9 +7,12 @@ export default function Footer() {
     return [
       "Caldicot Windows & Building Services",
       "Abergavenny Brake & Clutch",
-      "Foundry 4x4",
       "Muddy Series 4X4 Parts",
       "Whitecliff 4X4",
+      "AK Inspection Services Ltd",
+      "A.Morgan Property Maintenance",
+      "Wye Valley Carpet & Upholstery Cleaners",
+      "Lewis Thomas Spares",
     ];
   }, []);
 
