@@ -125,9 +125,7 @@ export default function About() {
   return (
     <main>
       <h1 className="text-2xl font-bold mb-3">About</h1>
-
       <h5 className="text-xl font-bold mb-2">Who are we?</h5>
-
       <p className="mb-2">
         The club was set up, in July 1987, by a group of mainly Land Rover
         owners who lived mostly in the Wye Valley and the Forest of Dean. It was
@@ -140,7 +138,6 @@ export default function About() {
         ownership. Most of our members are owners and users of Land Rovers,
         arguably the best 4x4 in the world (well we think so anyway).
       </p>
-
       <h5 className="text-xl font-bold mb-2">What do we do?</h5>
       <p className="mb-2">
         The club exists for the members and for the promotion of Rover products.
@@ -151,14 +148,12 @@ export default function About() {
       <p className="mb-2">
         We try to organise events every month. These events are :-
       </p>
-
       <div className="flex flex-col items-center w-full">
         {eventTypes.map((eventType: EventType, id: number) => (
           <div key={id}>{eventCard(eventType)}</div>
         ))}
       </div>
-
-      <p className="mb-2 mt-2">
+      <p className="mb-2 mt-3">
         If you don&apos;t fancy the competition, then you will be glad to learn
         that the club is not 100% competition orientated. Throughout the year we
         try to organise a number of caravan rallies and greenlane runs. On the
@@ -167,6 +162,33 @@ export default function About() {
         pub. These are not drinking sessions but meetings held in a pub which is
         centrally located.
       </p>
+      <h6 className="text-xl font-bold mb-2">When do we hold our events?</h6>
+      <p className="mb-2">
+        {" "}
+        We usually host one event each month, held on the{" "}
+        <strong>third Sunday</strong>. You can find details of our upcoming
+        events on the{" "}
+        <a href="/events" className="text-blue-800 dark:text-white underline">
+          Events Page
+        </a>
+        .{" "}
+      </p>{" "}
+      <p className="mb-2">
+        {" "}
+        We also enjoy visiting neighbouring clubs, especially when they host{" "}
+        <strong>interclub events</strong>. Once a year, over the{" "}
+        <strong>August Bank Holiday weekend</strong>, we proudly host our own
+        annual interclub competition — the{" "}
+        <strong>Wye &amp; Welsh Challenge</strong>. This long-standing tradition
+        has been running since <strong>1988</strong>.
+      </p>
+      <iframe
+        className="w-full aspect-video self-stretch md:min-h-96"
+        src="https://www.youtube.com/embed/"
+        frameBorder="0"
+        title=""
+        aria-hidden="true"
+      />
     </main>
   );
 }
