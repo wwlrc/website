@@ -1,5 +1,7 @@
+import { pathWildcat } from "@/spanner/api";
 import { Metadata } from "next";
 import Image from "next/image";
+import { cloneElement } from "react";
 
 export const metadata: Metadata = {
   title: "Wye & Welsh LRC | About",
@@ -13,10 +15,10 @@ type EventType = {
   pictureAlt: string;
 };
 
-function eventCard(eventType: EventType) {
+function eventCard(eventType: EventType, rightImageAlign: boolean) {
   let items: JSX.Element[] = [];
 
-  items.push(
+  let image = (
     <Image
       key="image"
       src={eventType.picture}
@@ -24,16 +26,33 @@ function eventCard(eventType: EventType) {
       width={0}
       height={0}
       quality={25}
-      className="object-cover w-full rounded-t-lg h-64 md:h-auto md:w-64 md:rounded-none md:rounded-s-lg"
-    />,
+      className="object-cover w-full rounded-t-lg h-64 md:h-auto md:w-64 md:rounded-none"
+    />
   );
+
+  let rightImage = null;
+  if (rightImageAlign) {
+    rightImage = cloneElement(image, {
+      key: "right-image",
+      className: image.props.className + " hidden md:block md:rounded-r-lg",
+    });
+    image = cloneElement(image, {
+      className: image.props.className + " md:hidden",
+    });
+  } else {
+    image = cloneElement(image, {
+      className: image.props.className + " md:rounded-s-lg",
+    });
+  }
+
+  items.push(image);
 
   items.push(
     <div
       key="description"
       className="flex flex-col justify-between p-4 leading-normal"
     >
-      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
         {eventType.title}
       </h5>
       <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
@@ -41,6 +60,10 @@ function eventCard(eventType: EventType) {
       </p>
     </div>,
   );
+
+  if (rightImage != null) {
+    items.push(rightImage);
+  }
 
   return (
     <a className="flex flex-col bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row  dark:border-gray-700 dark:bg-gray-800 mt-2 md:max-w-screen-md">
@@ -150,45 +173,81 @@ export default function About() {
       </p>
       <div className="flex flex-col items-center w-full">
         {eventTypes.map((eventType: EventType, id: number) => (
-          <div key={id}>{eventCard(eventType)}</div>
+          <div key={id}>{eventCard(eventType, id % 2 == 0)}</div>
         ))}
       </div>
-      <p className="mb-2 mt-3">
-        If you don&apos;t fancy the competition, then you will be glad to learn
-        that the club is not 100% competition orientated. Throughout the year we
-        try to organise a number of caravan rallies and greenlane runs. On the
-        subject of green lanes the club supports rights of way issues and is
-        active in this area. We also hold regular monthly social evenings in a
-        pub. These are not drinking sessions but meetings held in a pub which is
-        centrally located.
-      </p>
-      <h6 className="text-xl font-bold mb-2">When do we hold our events?</h6>
+      <h6 className="text-xl font-bold mb-2 mt-3">
+        When do we hold our events?
+      </h6>
       <p className="mb-2">
         {" "}
-        We usually host one event each month, held on the{" "}
-        <strong>third Sunday</strong>. You can find details of our upcoming
-        events on the{" "}
-        <a href="/events" className="text-blue-800 dark:text-white underline">
-          Events Page
-        </a>
-        .{" "}
-      </p>{" "}
+        We usually host one event each month, held on every{" "}
+        <strong>third Sunday</strong>. You&apos;re welcome to turn up at any
+        event to watch and see what we&apos;re all about. We&apos;ll be happy to
+        answer any questions you may have.
+      </p>
       <p className="mb-2">
+        You can find details of our upcoming events on the events page:
+      </p>
+      <a
+        href={"/events"}
+        target="_blank"
+        className="mb-2 inline-flex items-center w-128 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors font-medium"
+      >
+        Upcoming Events
+      </a>
+
+      <p className="mb-2 mt-2">
         {" "}
         We also enjoy visiting neighbouring clubs, especially when they host{" "}
-        <strong>interclub events</strong>. Once a year, over the{" "}
-        <strong>August Bank Holiday weekend</strong>, we proudly host our own
-        annual interclub competition — the{" "}
-        <strong>Wye &amp; Welsh Challenge</strong>. This long-standing tradition
-        has been running since <strong>1988</strong>.
+        <strong>interclub events</strong>.
       </p>
-      <iframe
-        className="w-full aspect-video self-stretch md:min-h-96"
-        src="https://www.youtube.com/embed/"
-        frameBorder="0"
-        title=""
-        aria-hidden="true"
-      />
+      <p className="mb-2">
+        We proudly host our own annual interclub competition, the{" "}
+        <strong>Wye &amp; Welsh Challenge</strong> (formerly known as the
+        Baskerville Challenge), usually over the August bank-holiday weekend.
+        Bookings usually open for this event a few months before, so keep an eye
+        out on the upcoming events page.
+      </p>
+      <div className="flex items-center justify-center w-full">
+        <iframe
+          className="w-full md:w-3/5 aspect-video self-stretch md:min-h-96"
+          src="https://www.youtube.com/embed/OauOAhq7Rps"
+          frameBorder="0"
+          allow="fullscreen"
+          aria-hidden="true"
+        />
+      </div>
+      <p className="mb-2 mt-2">
+        Finally, the largest event in the land rovering calendar is the ALRC
+        National Rally; competitors come from clubs all across the UK and abroad
+        come together to compete against each other. ALRC member clubs bid to
+        host it each year, and it can also by ran by the ALRC themslves. We have
+        hosted this event twice, once in 2013 and again in 2023.
+      </p>
+      <div className="flex flex-col sm:flex-row items-center justify-center">
+        <a href="https://alrc.co.uk/national-rally/2023-event/" target="_blank">
+          <Image
+            src="/alrc-nr-2013.png"
+            width={50}
+            height={50}
+            alt="ALRC National Rally 2013"
+            className="rounded-lg w-40 h-auto sm:h-64 sm:w-64 m-2"
+          />
+        </a>
+        <a
+          href="https://alrc.co.uk/wp-content/uploads/2023/07/ALRC-National-Rally-Results-2013.pdf"
+          target="_blank"
+        >
+          <Image
+            src="/alrc-nr-2023.png"
+            width={50}
+            height={50}
+            alt="ALRC National Rally 2023"
+            className="rounded-lg w-40 h-auto sm:w-64 sm:h-64 m-2 bg-white"
+          />
+        </a>
+      </div>
     </main>
   );
 }
