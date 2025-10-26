@@ -1,9 +1,125 @@
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Wye & Welsh LRC | About",
   description: "Learn more about the Wye & Welsh Land Rover Club.",
 };
+
+type EventType = {
+  title: string;
+  description: JSX.Element;
+  picture: string;
+  pictureAlt: string;
+};
+
+function eventCard(eventType: EventType) {
+  let items: JSX.Element[] = [];
+
+  items.push(
+    <Image
+      key="image"
+      src={eventType.picture}
+      alt={eventType.pictureAlt}
+      width={0}
+      height={0}
+      quality={25}
+      className="object-cover w-full rounded-t-lg h-64 md:h-auto md:w-64 md:rounded-none md:rounded-s-lg"
+    />,
+  );
+
+  items.push(
+    <div
+      key="description"
+      className="flex flex-col justify-between p-4 leading-normal"
+    >
+      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        {eventType.title}
+      </h5>
+      <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        {eventType.description}
+      </p>
+    </div>,
+  );
+
+  return (
+    <a className="flex flex-col bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row  dark:border-gray-700 dark:bg-gray-800 mt-2 md:max-w-screen-md">
+      {items.map((element: JSX.Element) => element)}
+    </a>
+  );
+}
+
+var eventTypes = [
+  {
+    title: "Tyro",
+    description: (
+      <span>
+        This is a trial for showroom condition standard vehicles and is
+        completely non damaging. The rules also allow 13 year olds to drive, so
+        it is a great opportunity for the kids to show dad how to drive the
+        family Disco or Freelander. They are completely non damaging and great
+        family entertainment. If you look at the events list you will see that
+        we intend to put on a lot more TYROs this coming year.
+      </span>
+    ),
+    picture: "/tyro.jpg",
+    pictureAlt: "A new land rover tackles a grassy hump",
+  },
+  {
+    title: "Road Taxed Vehicle Trial",
+    description: (
+      <span>
+        This is where members can pit themselves and their vehicles against each
+        other. They are supposed to be non damaging (unless the driver forgets
+        to put his/her brain into gear first). The vehicles have to be fully
+        road legal.
+      </span>
+    ),
+    picture: "/rtv.jpg",
+    pictureAlt:
+      "A series three land rover catches a breather before the next obsticle in the course",
+  },
+  {
+    title: "Cross Country Vehicle Trial",
+    description: (
+      <span>
+        These are for specialist vehicles and so are much harder and can be
+        damaging (again the level of damage is down to the driver). These
+        vehicles are not necessarily road legal. The building regulations for
+        these vehicles are not the same as for the Competitive Safari vehicles.
+      </span>
+    ),
+    picture: "/ccv.jpg",
+    pictureAlt:
+      "A roll-caged land rover teeters on the edge of a steep incline",
+  },
+  {
+    title: "Time Trial",
+    description: (
+      <span>
+        This event is much the same as a CCVT, but it is timed. A set target
+        time is calculated by measuring the length of the course and you get a
+        penalty point for every second you spend over the target time completing
+        the course.
+      </span>
+    ),
+    picture: "/tt.jpg",
+    pictureAlt: "A land rover flies over the finish line of a time trial",
+  },
+  {
+    title: "Competitive Safari",
+    description: (
+      <span>
+        A comp safari is considered a cross country race against the clock.
+        Generally these vehicles are not road legal and if they conform to the
+        building regulations for this discipline then they will be eligible to
+        enter CCVT.
+      </span>
+    ),
+    picture: "/comp.jpg",
+    pictureAlt: "A land rover zooms past on a gravel track",
+  },
+];
 
 export default function About() {
   return (
@@ -35,56 +151,21 @@ export default function About() {
       <p className="mb-2">
         We try to organise events every month. These events are :-
       </p>
-      <p className="mb-2">
-        <h6 className="font-bold mb-2">Tyro Trial</h6>
-        This is a trial for showroom condition standard vehicles and is
-        completely non damaging. The rules also allow 13 year olds to drive, so
-        it is a great opportunity for the kids to show dad how to drive the
-        family Disco or Freelander. They are completely non damaging and great
-        family entertainment. If you look at the events list you will see that
-        we intend to put on a lot more TYROs this coming year.
-      </p>
 
-      <p className="mb-2">
-        <h6 className="font-bold mb-2">Road Taxed Vehicle Trial (RTV)</h6>
-        This is where members can pit themselves and their vehicles against each
-        other. They are supposed to be non damaging (unless the driver forgets
-        to put his/her brain into gear first). The vehicles have to be fully
-        road legal.
-      </p>
+      <div className="flex flex-col items-center w-full">
+        {eventTypes.map((eventType: EventType, id: number) => (
+          <div key={id}>{eventCard(eventType)}</div>
+        ))}
+      </div>
 
-      <p className="mb-2">
-        <h6 className="font-bold mb-2">Cross Country Vehicle Trial (CCVT)</h6>
-        These are for specialist vehicles and so are much harder and can be
-        damaging (again the level of damage is down to the driver). These
-        vehicles are not necessarily road legal. The building regulations for
-        these vehicles are not the same as for the Competitive Safari vehicles.
-      </p>
-
-      <p className="mb-2">
-        <h6 className="font-bold mb-2">Time Trial</h6>
-        This sort of event is much the same as a CCVT but it is timed. A set
-        target time is calculated by measuring the length of the course and you
-        get a penalty point for every second you spend over the target time
-        completing the course.
-      </p>
-
-      <p className="mb-2">
-        <h6 className="font-bold mb-2">Comp Safari</h6>
-        Which is a cross country race against the clock. Generally these
-        vehicles are not road legal and if they conform to the building
-        regulations for this discipline then they will be eligible to enter
-        CCVT.
-      </p>
-
-      <p className="mb-2">
-        If all this is too much for you then you will be glad to learn that the
-        club is not 100% competition orientated. Throughout the year we try to
-        organise a number of caravan rallies and greenlane runs. On the subject
-        of green lanes the club supports rights of way issues and is active in
-        this area. We also hold regular monthly social evenings in a pub. These
-        are not drinking sessions but meetings held in a pub which is centrally
-        located.
+      <p className="mb-2 mt-2">
+        If you don&apos;t fancy the competition, then you will be glad to learn
+        that the club is not 100% competition orientated. Throughout the year we
+        try to organise a number of caravan rallies and greenlane runs. On the
+        subject of green lanes the club supports rights of way issues and is
+        active in this area. We also hold regular monthly social evenings in a
+        pub. These are not drinking sessions but meetings held in a pub which is
+        centrally located.
       </p>
     </main>
   );
