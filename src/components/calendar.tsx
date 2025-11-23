@@ -51,6 +51,19 @@ function renderStatus(event: any) {
     );
   }
 
+  if (status == "cancelled") {
+    return (
+      <a
+        href={pathcat("https://spanner.wwlrc.co.uk", "/rallies/r/:id", event)}
+        target="_blank"
+      >
+        <button className="px-2 py-1 bg-red-600 text-white font-bold rounded-lg text-sm">
+          Event Cancelled
+        </button>
+      </a>
+    );
+  }
+
   if (status == "open") {
     return (
       <a
