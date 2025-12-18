@@ -2,37 +2,29 @@
 import Link from "next/link";
 import { use, useEffect, useState, useCallback, useMemo } from "react";
 
+const sponsors = [
+  "Caldicot Windows & Building Services",
+  "Abergavenny Brake & Clutch",
+  "Muddy Series 4X4 Parts",
+  "Whitecliff 4X4",
+  "AK Inspection Services Ltd",
+  "A.Morgan Property Maintenance",
+  "Wye Valley Carpet & Upholstery Cleaners",
+  "Lewis Thomas Spares",
+];
+
 export default function Footer() {
-  const sponsors = useMemo(() => {
-    return [
-      "Caldicot Windows & Building Services",
-      "Abergavenny Brake & Clutch",
-      "Muddy Series 4X4 Parts",
-      "Whitecliff 4X4",
-      "AK Inspection Services Ltd",
-      "A.Morgan Property Maintenance",
-      "Wye Valley Carpet & Upholstery Cleaners",
-      "Lewis Thomas Spares",
-    ];
-  }, []);
-
-  const [sponsorIndex, setSponsorIndex] = useState(-1);
-
-  const switchSponsor = useCallback(() => {
-    let index = Math.floor(Math.random() * sponsors.length);
-
-    setSponsorIndex(index);
-  }, [sponsors]);
+  const [sponsorIndex, setSponsorIndex] = useState<number>(-1);
 
   useEffect(() => {
-    switchSponsor();
+    const stepSponsor = async () => {
+      setSponsorIndex(Math.floor(Math.random() * sponsors.length));
+    };
 
-    const intervalId = setInterval(() => {
-      switchSponsor();
-    }, 5000);
+    const intervalId = setInterval(stepSponsor, 5000);
 
     return () => clearInterval(intervalId);
-  }, [switchSponsor]);
+  }, [sponsorIndex]);
 
   return (
     <main>

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 type Sponsor = {
   src: string;
@@ -8,55 +8,54 @@ type Sponsor = {
   href: string | null;
 };
 
+let sponsors: Sponsor[] = [
+  {
+    src: "/sponsors/abc.jpg",
+    alt: "Abergavenny Brake & Clutch",
+    href: "http://www.abcmotorfactors.com/",
+  },
+  {
+    src: "/sponsors/cwbs.jpg",
+    alt: "Caldicot Windows & Building Services",
+    href: "mailto:chippyatwork78@gmail.com",
+  },
+  {
+    src: "/sponsors/muddyseries4x4.jpg",
+    alt: "Muddy Series 4x4",
+    href: "https://www.ebay.co.uk/str/seriesuser4x4",
+  },
+  {
+    src: "/sponsors/whitecliff4x4.jpg",
+    alt: "Whitecliff 4x4",
+    href: "https://www.whitecliff4x4.co.uk/",
+  },
+  {
+    src: "/sponsors/lewis-thomas-spares.png",
+    alt: "Lewis Thomas Spares",
+    href: "tel:+44 7876 826194",
+  },
+  {
+    src: "/sponsors/wye-valley-carpet-and-upholstery-cleaners.png",
+    alt: "Wye Valley Carpet and Upholstery Cleaners",
+    href: "mailto:wyevalleycarpetcleaners@gmail.com",
+  },
+  {
+    src: "/sponsors/amorgan-property-maintenance.png",
+    alt: "A.Morgan Property Maintenance",
+    href: "tel:+44 1495 215381",
+  },
+  {
+    src: "/sponsors/ak-inspection-services.jpg",
+    alt: "AK Inspection Services",
+    href: "tel:+44 7765 196119",
+  },
+].sort(() => Math.random() - 0.5);
+
 export default function SponsorGallery() {
   const [images, setImages] = useState<Sponsor[]>([]);
 
   useEffect(() => {
-    let images: Sponsor[] = [
-      {
-        src: "/sponsors/abc.jpg",
-        alt: "Abergavenny Brake & Clutch",
-        href: "http://www.abcmotorfactors.com/",
-      },
-      {
-        src: "/sponsors/cwbs.jpg",
-        alt: "Caldicot Windows & Building Services",
-        href: "mailto:chippyatwork78@gmail.com",
-      },
-      {
-        src: "/sponsors/muddyseries4x4.jpg",
-        alt: "Muddy Series 4x4",
-        href: "https://www.ebay.co.uk/str/seriesuser4x4",
-      },
-      {
-        src: "/sponsors/whitecliff4x4.jpg",
-        alt: "Whitecliff 4x4",
-        href: "https://www.whitecliff4x4.co.uk/",
-      },
-      {
-        src: "/sponsors/lewis-thomas-spares.png",
-        alt: "Lewis Thomas Spares",
-        href: "tel:+44 7876 826194",
-      },
-      {
-        src: "/sponsors/wye-valley-carpet-and-upholstery-cleaners.png",
-        alt: "Wye Valley Carpet and Upholstery Cleaners",
-        href: "mailto:wyevalleycarpetcleaners@gmail.com",
-      },
-      {
-        src: "/sponsors/amorgan-property-maintenance.png",
-        alt: "A.Morgan Property Maintenance",
-        href: "tel:+44 1495 215381",
-      },
-      {
-        src: "/sponsors/ak-inspection-services.jpg",
-        alt: "AK Inspection Services",
-        href: "tel:+44 7765 196119",
-      },
-    ];
-
-    images = images.sort(() => Math.random() - 0.5);
-    setImages(images);
+    (async () => setImages(sponsors))();
   }, []);
 
   if (images.length == 0) {

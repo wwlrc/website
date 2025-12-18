@@ -3,21 +3,20 @@
 import Link from "next/link";
 import NavbarBtn from "./navbar_btn";
 import React, { useEffect } from "react";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
 
-  function navbarToggle() {
+  const navbarToggle = () => {
     setNavbarOpen(!navbarOpen);
-  }
-
-  const pathname = usePathname();
+  };
 
   useEffect(() => {
-    setNavbarOpen(false);
-  }, [pathname]);
+    (async () => {
+      setNavbarOpen(false);
+    })();
+  }, []);
 
   return (
     <nav>
