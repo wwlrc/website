@@ -1,4 +1,4 @@
-import { pathWildcat } from "@/spanner/api";
+import { spannerPathCat } from "@/spanner/api";
 import { wwlrcClubId } from "@/spanner/wwlrc";
 import { Download, ExternalLinkIcon } from "lucide-react";
 import { Metadata } from "next";
@@ -178,7 +178,7 @@ export default function Join() {
       </p>
       <p className="mb-3">
         <a
-          href={pathWildcat("clubs/c/:clubId/membership_request", {
+          href={spannerPathCat("clubs/c/:clubId/membership_request", {
             clubId: wwlrcClubId,
           })}
           target="_blank"

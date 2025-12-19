@@ -1,4 +1,4 @@
-import { spannerApiFetch } from "./api";
+import { spannerApiFetch, spannerPathCat } from "./api";
 import { wwlrcClubId } from "./wwlrc";
 
 export async function getPosts(): Promise<any[]> {
