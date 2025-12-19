@@ -1,21 +1,36 @@
-import { pathcat, Query } from "pathcat";
+import { base, ExtractRouteParams, Query, pathcat } from "pathcat";
 
-const spannerBase = "https://spanner.wwlrc.co.uk";
+export const spannerPathCat = base("https://spanner.wwlrc.co.uk");
 
-export function pathWildcat(template: string, query?: Query<string>): string {
-  if (!query) {
-    return pathcat(spannerBase, template);
-  }
-
-  return pathcat(spannerBase, template, query);
+function wrap<R>(
+  fn: (path: string) => R,
+): <Path extends string>(
+  base: string,
+  path: Path,
+  ...query: [ExtractRouteParams<Path>] extends [never]
+    ? [query?: Query<Path>]
+    : [query: Query<Path>]
+) => R {
+  return (base, path, ...query): R => fn(pathcat(base, path, ...query));
 }
 
-export function spannerApiFetch(
-  template: string,
-  query?: Query<string>,
-): Promise<any> {
-  const url = pathWildcat(template, query);
-  let p = fetch(url);
-  // TODO: probably worth putting some more fancy error handling here
-  return p.then((response) => response.json());
+function wrapWithBase<R>(
+  base: string,
+  fn: (path: string) => R,
+): <Path extends string>(
+  path: Path,
+  ...query: [ExtractRouteParams<Path>] extends [never]
+    ? [query?: Query<Path>]
+    : [query: Query<Path>]
+) => R {
+  return (path, ...query): R => wrap(fn)(base, path, ...query);
 }
+
+export const spannerApiFetch = wrapWithBase<Promise<any>>(
+  "https://spanner.wwlrc.co.uk",
+  async (path) => {
+    let response = await fetch(path);
+    // TODO: probably worth putting some more fancy error handling here
+    return response.json();
+  },
+);

@@ -1,4 +1,3 @@
-import { pathWildcat } from "@/spanner/api";
 import { Metadata } from "next";
 import Image from "next/image";
 import { cloneElement } from "react";
