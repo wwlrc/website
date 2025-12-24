@@ -6,4 +6,8 @@ RewriteRule "/\.|^\.(?!well-known/)" - [F]
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R,L]
 
+Redirect 301 /membership /join
+Redirect 301 /membership/renewal /join
+Redirect 301 /membership/success /join
+
 ErrorDocument 404 /404/
