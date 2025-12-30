@@ -227,11 +227,6 @@ var people: Person[] = [
     picture: "/mugshots/daveb.jpg",
   },
   {
-    name: "Dave Barrell",
-    roles: ["Membership Secretary"],
-    picture: "/mugshots/daveb.jpg",
-  },
-  {
     name: "Justin Fuller",
     roles: ["Equipment"],
     picture: "/mugshots/justinf.png",
@@ -240,6 +235,41 @@ var people: Person[] = [
     name: "Richard Hannam",
     roles: ["Newsletter"],
     picture: "/mugshots/richardh.png",
+  },
+  {
+    name: "Adam Godwin",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/adamg.jpg",
+  },
+  {
+    name: "Malcolm Knight",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/papasmurf.jpg",
+  },
+  {
+    name: "Darren Williams",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/darrenw.png",
+  },
+  {
+    name: "Mykul Jones",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/nophoto.png",
+  },
+  {
+    name: "Paul Davies",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/pauld.png",
+  },
+  {
+    name: "Jack Llewellyn",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/nophoto.png",
+  },
+  {
+    name: "David Hooper",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/davidh.png",
   },
 ];
 
