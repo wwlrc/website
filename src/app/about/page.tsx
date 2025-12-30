@@ -14,6 +14,38 @@ type EventType = {
   pictureAlt: string;
 };
 
+type Person = {
+  name: string;
+  roles: string[];
+  picture: string;
+};
+
+function personCard(person: Person) {
+  return (
+    <a className="flex flex-row bg-white border border-gray-200 rounded-lg shadow-sm  dark:border-gray-700 dark:bg-gray-800 h-full col-span-2">
+      <Image
+        key="image"
+        src={person.picture}
+        alt={"Picture of " + person.name}
+        width={0}
+        height={0}
+        quality={25}
+        className="object-cover w-full max-w-32 h-auto md:h-auto rounded-l-lg"
+      />
+      <div key="description" className="flex flex-col p-4 leading-normal">
+        <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+          {person.name}
+        </h5>
+        <ul className="font-normal text-base text-gray-700 dark:text-gray-400">
+          {person.roles.map((role) => (
+            <li key={role}>{role}</li>
+          ))}
+        </ul>
+      </div>
+    </a>
+  );
+}
+
 function eventCard(eventType: EventType, rightImageAlign: boolean) {
   let items: JSX.Element[] = [];
 
@@ -143,11 +175,108 @@ var eventTypes = [
   },
 ];
 
+var people: Person[] = [
+  {
+    name: "Toby Fuller",
+    roles: ["Chair", "Annual Event Liason", "Equipment"],
+    picture: "/mugshots/tobyf.jpg",
+  },
+  {
+    name: "Ashley Morgan",
+    roles: ["Vice Chair", "Assistant Competition Secretary"],
+    picture: "/mugshots/ashleym.jpg",
+  },
+  {
+    name: "John Ireland",
+    roles: ["Secretary"],
+    picture: "/mugshots/johni.png",
+  },
+  {
+    name: "Sarah Thomas",
+    roles: ["Treasurer"],
+    picture: "/mugshots/saraht.png",
+  },
+  {
+    name: "Peter Gladman",
+    roles: ["ALRC Representative", "Safety & Safeguarding Officer"],
+    picture: "/mugshots/peterg.jpg",
+  },
+  {
+    name: "Anthony Knight",
+    roles: ["Chief Marshal", "Chief Scrutineer"],
+    picture: "/mugshots/anthonyk.png",
+  },
+  {
+    name: "John Davies",
+    roles: ["Competition Secretary"],
+    picture: "/mugshots/johnd.png",
+  },
+  {
+    name: "Archey Barrell",
+    roles: ["Bookings Secretary", "Website Admin"],
+    picture: "/mugshots/archeyb.png",
+  },
+  {
+    name: "Sian Jones",
+    roles: ["Social Media Liaison"],
+    picture: "/mugshots/sianj.png",
+  },
+  {
+    name: "Dave Barrell",
+    roles: ["Membership Secretary"],
+    picture: "/mugshots/daveb.jpg",
+  },
+  {
+    name: "Justin Fuller",
+    roles: ["Equipment"],
+    picture: "/mugshots/justinf.png",
+  },
+  {
+    name: "Richard Hannam",
+    roles: ["Newsletter"],
+    picture: "/mugshots/richardh.png",
+  },
+  {
+    name: "Adam Godwin",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/adamg.jpg",
+  },
+  {
+    name: "Malcolm Knight",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/papasmurf.jpg",
+  },
+  {
+    name: "Darren Williams",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/darrenw.png",
+  },
+  {
+    name: "Mykul Jones",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/nophoto.png",
+  },
+  {
+    name: "Paul Davies",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/pauld.png",
+  },
+  {
+    name: "Jack Llewellyn",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/nophoto.png",
+  },
+  {
+    name: "David Hooper",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/davidh.png",
+  },
+];
+
 export default function About() {
   return (
     <main>
       <h1 className="text-2xl font-bold mb-3">About</h1>
-      <h5 className="text-xl font-bold mb-2">Who are we?</h5>
       <p className="mb-2">
         The club was set up, in July 1987, by a group of mainly Land Rover
         owners who lived mostly in the Wye Valley and the Forest of Dean. It was
@@ -175,7 +304,7 @@ export default function About() {
           <div key={id}>{eventCard(eventType, id % 2 == 0)}</div>
         ))}
       </div>
-      <h6 className="text-xl font-bold mb-2 mt-3">
+      <h6 className="text-xl font-bold mb-2 mt-5">
         When do we hold our events?
       </h6>
       <p className="mb-2">
@@ -228,10 +357,10 @@ export default function About() {
         <a href="https://alrc.co.uk/national-rally/2023-event/" target="_blank">
           <Image
             src="/alrc-nr-2013.png"
-            width={50}
-            height={50}
+            width={25}
+            height={25}
             alt="ALRC National Rally 2013"
-            className="rounded-lg w-40 h-auto sm:h-64 sm:w-64 m-2"
+            className="rounded-lg w-20 h-auto sm:h-32 sm:w-32 m-2"
           />
         </a>
         <a
@@ -240,12 +369,25 @@ export default function About() {
         >
           <Image
             src="/alrc-nr-2023.png"
-            width={50}
-            height={50}
+            width={25}
+            height={25}
             alt="ALRC National Rally 2023"
-            className="rounded-lg w-40 h-auto sm:w-64 sm:h-64 m-2 bg-white"
+            className="rounded-lg w-20 h-auto sm:w-32 sm:h-32 m-2 bg-white"
           />
         </a>
+      </div>
+      <h5 className="text-xl font-bold mb-2">Who are we?</h5>
+      <p className="mb-4">
+        Our members come from all across South Wales and the bordering area. The
+        club itself is run by a team of dedicated volunteers who share a passion
+        for land rovering and a desire to promote the sport.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
+        {people.map((person: Person, id: number) => (
+          <div key={id} className="m-1">
+            {personCard(person)}
+          </div>
+        ))}
       </div>
     </main>
   );
