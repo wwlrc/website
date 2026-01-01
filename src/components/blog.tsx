@@ -43,7 +43,7 @@ export default function SpannerBlog({ staticPosts }: any) {
               <p className="text-sm mt-2">
                 <i>
                   Created at {new Date(post.created_at).toLocaleString()} by{" "}
-                  {post.author.first_name} {post.author.last_name}
+                  {post.author}
                 </i>
               </p>
             </div>

@@ -27,7 +27,7 @@ function wrapWithBase<R>(
 }
 
 export const spannerApiFetch = wrapWithBase<Promise<any>>(
-  "https://spanner.wwlrc.co.uk",
+  "https://spanner.wwlrc.co.uk/api/public/v1",
   async (path) => {
     let response = await fetch(path);
     // TODO: probably worth putting some more fancy error handling here
