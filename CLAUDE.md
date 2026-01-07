@@ -9,12 +9,12 @@ This is the Wye & Welsh Land Rover Club (WWLRC) website, a statically exported N
 ## Commands
 
 ```bash
-npm run dev      # Start development server
-npm run build    # Build static export (outputs to /out)
-npm run lint     # Run ESLint
+bun run dev      # Start development server
+bun run build    # Build static export (outputs to /out)
+bun run lint     # Run ESLint
 ```
 
-Always run `npm run build` before pushing to ensure static export works correctly.
+Always run `bun run build` before pushing to ensure static export works correctly.
 
 ## Architecture
 
