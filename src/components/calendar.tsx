@@ -81,6 +81,9 @@ function renderStatus(event: any) {
 }
 
 function renderLocation(location: any) {
+  if (location == null) {
+    return "To Be Confirmed";
+  }
   return location.name + " (" + location.postcode + ")";
 }
 
