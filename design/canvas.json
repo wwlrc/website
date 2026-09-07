@@ -1,107 +1,89 @@
 {
   "artboards": [
     {
-      "file": "Today.dc.html",
-      "title": "Today \u2014 the current site",
+      "file": "Main.dc.html",
+      "title": "Homepage",
       "x": 0,
       "y": 0,
+      "w": 1200,
+      "h": 1450,
+      "page": "page-1"
+    },
+    {
+      "file": "Phone.dc.html",
+      "title": "Homepage on a phone",
+      "x": 1360,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "page": "page-1"
+    },
+    {
+      "file": "Today.dc.html",
+      "title": "Today \u2014 the current site",
+      "x": 1900,
+      "y": 0,
       "w": 1024,
-      "h": 1000
+      "h": 1000,
+      "page": "page-1"
     },
     {
-      "file": "OptionA.dc.html",
-      "title": "Option A \u2014 Club Green",
-      "x": 0,
-      "y": 1480,
-      "w": 1200,
-      "h": 2020
-    },
-    {
-      "file": "Main.dc.html",
+      "file": "OptionB.dc.html",
       "title": "Option B \u2014 Out on the Field",
-      "x": 1400,
-      "y": 1480,
+      "x": 0,
+      "y": 0,
       "w": 1200,
-      "h": 2050
+      "h": 2050,
+      "page": "page-2"
     },
     {
       "file": "OptionC.dc.html",
       "title": "Option C \u2014 Noticeboard",
-      "x": 2800,
-      "y": 1480,
-      "w": 1200,
-      "h": 1330
-    },
-    {
-      "file": "MobileA.dc.html",
-      "title": "Option A on a phone",
-      "x": 0,
-      "y": 3730,
-      "w": 390,
-      "h": 844
-    },
-    {
-      "file": "MobileB.dc.html",
-      "title": "Option B on a phone",
       "x": 1400,
-      "y": 3730,
-      "w": 390,
-      "h": 844
-    },
-    {
-      "file": "MobileC.dc.html",
-      "title": "Option C on a phone",
-      "x": 2800,
-      "y": 3730,
-      "w": 390,
-      "h": 844
+      "y": 0,
+      "w": 1200,
+      "h": 1330,
+      "page": "page-2"
     }
   ],
   "annotations": [
     {
-      "id": "read-me",
-      "x": 1120,
-      "y": 0,
-      "w": 380,
-      "text": "Three directions for the homepage, plus how each looks on a phone.\n\nThe page is now: a brief introduction, latest news, and a link through to upcoming events. No event listings on the homepage.\n\nAnything in [square brackets] is a placeholder \u2014 news titles, dates and authors come live from Spanner, so I haven't invented any. Everything else is real club copy."
+      "id": "brief",
+      "x": 0,
+      "y": -300,
+      "w": 460,
+      "page": "page-1",
+      "text": "HOMEPAGE \u2014 Option A, Club Green\n\nA sliver of the club photo under the header, a short introduction with the events button, then straight into news.\n\nThe introduction is a placeholder for you to write. Everything in [square brackets] is a placeholder \u2014 news titles, dates and authors come live from Spanner."
     },
     {
       "id": "today-note",
-      "x": 1120,
-      "y": 420,
-      "w": 380,
-      "text": "What's making it feel cluttered today:\n\n\u2022 The page opens with an <h1> that just says \"Home\"\n\u2022 Everything sits at one size on one white slab \u2014 no hierarchy to follow\n\u2022 News posts render full-length, so one long one buries the rest\n\u2022 The 2.5MB background photo is only visible as a 12px margin\n\u2022 6 nav links + a two-line wordmark + an 80px logo all crammed into 1024px"
+      "x": 1900,
+      "y": -300,
+      "w": 420,
+      "page": "page-1",
+      "text": "The current site, for comparison.\n\nOpens with an <h1> that says \"Home\", everything at one size on one white slab, and news posts render full-length so one long one buries the rest."
     },
     {
-      "id": "opt-a",
+      "id": "not-chosen",
       "x": 0,
-      "y": 1180,
-      "w": 420,
-      "text": "OPTION A \u2014 CLUB GREEN\nThe careful fix.\n\nSame structure and pages, but with a real intro, a proper type ramp and generous space. News is the body of the page; a green band at the foot carries the events link.\n\nWhy: lowest risk. Nobody in the club has to relearn anything, and it's the quickest to build.\n\nTradeoff: safe. It solves the clutter but nothing about it will stop a stranger scrolling past."
+      "y": -260,
+      "w": 460,
+      "page": "page-2",
+      "text": "The two directions not taken, kept for reference.\n\nB led with a full-bleed photo hero; C dropped the hero entirely and ran news beside a sidebar."
+    }
+  ],
+  "pages": [
+    {
+      "id": "page-1",
+      "name": "Homepage"
     },
     {
-      "id": "opt-b",
-      "x": 1400,
-      "y": 1180,
-      "w": 420,
-      "text": "OPTION B \u2014 OUT ON THE FIELD\nLead with the mud.\n\nFull-bleed photo hero carrying the introduction, then news set editorially, then a dark band with the events link.\n\nWhy: the club's best asset is what it looks like on a wet Sunday, and right now the site hides that behind a white box.\n\nTradeoff: it lives or dies on the photography \u2014 someone has to keep feeding it good pictures. Heaviest page of the three, and the news sits a full screen down."
-    },
-    {
-      "id": "opt-c",
-      "x": 2800,
-      "y": 1180,
-      "w": 420,
-      "text": "OPTION C \u2014 NOTICEBOARD\nStraight to the point.\n\nNo hero. A tight intro block, then news as the main column with a sidebar carrying the events link and a word for newcomers. Everything above the fold.\n\nWhy: for the hundred-plus existing members, news and what's-on are the only things they come for.\n\nTradeoff: coldest of the three to a newcomer, and it leans hardest on there being fresh news to show."
-    },
-    {
-      "id": "mobile-note",
-      "x": 0,
-      "y": 3470,
-      "w": 480,
-      "text": "Phone views \u2014 worth weighing these heavily. Most people will meet this site on a phone, and the current one squeezes a 5em logo and a two-line wordmark into 390px before you reach any content."
+      "id": "page-2",
+      "name": "Not chosen"
     }
   ],
   "launch": {
-    "view": "canvas"
+    "view": "canvas",
+    "page": "page-1"
   }
 }
