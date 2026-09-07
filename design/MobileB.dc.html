@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <style>
+    body { margin: 0; background: #faf7ef; font-family: "Source Serif 4", Georgia, "Times New Roman", serif; }
+    a { color: #8f5314; text-decoration: none; }
+    a:hover { color: #6d3f0f; }
+  </style>
+</helmet>
+
+<div style="width: 390px; height: 844px; overflow: hidden; background: #faf7ef; color: #191a15; font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;">
+
+  <section style="height: 620px; background-image: linear-gradient(to bottom, rgba(10,12,7,0.68) 0%, rgba(10,12,7,0.50) 22%, rgba(10,12,7,0.86) 56%, rgba(10,12,7,0.94) 100%), url(./hero.jpg); background-size: cover; background-position: 62% 32%; display: flex; flex-direction: column; justify-content: space-between;">
+
+    <header style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 20px;">
+      <a href="#" style="display: flex; align-items: center; gap: 10px; color: #ffffff;">
+        <img src="logo.png" alt="Wye &amp; Welsh Land Rover Club" style="width: 42px; height: 42px; object-fit: contain; background: #ffffff; border-radius: 50%; padding: 2px;">
+        <span style="font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 12px; line-height: 1.15; letter-spacing: 0.03em; text-transform: uppercase;">Wye &amp; Welsh<br>Land Rover Club</span>
+      </a>
+      <button type="button" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: none; border: 1px solid rgba(255,255,255,0.42); border-radius: 2px; color: #ffffff;">
+        <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Menu</span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+      </button>
+    </header>
+
+    <div style="padding: 0 20px 26px 20px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start;">
+      <span style="font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #e0a558;">Founded 1987 &middot; Wye Valley</span>
+      <h1 style="margin: 0; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 44px; line-height: 0.97; letter-spacing: -0.032em; color: #ffffff; text-wrap: pretty;">Get out in the mud with us.</h1>
+      <p style="margin: 0; font-size: 17px; line-height: 1.5; color: rgba(255,255,255,0.88);">One event a month, usually the third Sunday. Come and watch &mdash; it costs nothing.</p>
+      <div style="display: flex; flex-direction: column; gap: 10px; align-self: stretch; padding-top: 2px;">
+        <a href="#" style="display: inline-flex; align-items: center; justify-content: center; gap: 9px; height: 52px; background: #b06a1c; color: #ffffff; border-radius: 2px; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 16px;">See what&rsquo;s on next</a>
+        <a href="#" style="display: inline-flex; align-items: center; justify-content: center; height: 52px; border: 1px solid rgba(255,255,255,0.5); color: #ffffff; border-radius: 2px; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 16px;">Join the club</a>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 12px; padding: 13px 20px; background: rgba(9,11,7,0.8); border-top: 1px solid rgba(255,255,255,0.14);">
+      <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;">
+        <span style="font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #e0a558;">Next event</span>
+        <span style="font-size: 15px; color: #ffffff;">[Sun 00 Month] &middot; [Venue]</span>
+      </div>
+      <a href="#" style="display: inline-flex; align-items: center; height: 44px; padding: 0 16px; background: #ffffff; color: #191a15; border-radius: 2px; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 14px; white-space: nowrap;">Book</a>
+    </div>
+  </section>
+
+  <section style="padding: 24px 20px;">
+    <h2 style="margin: 0 0 4px 0; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.022em; color: #191a15;">Five ways to have a go</h2>
+    <p style="margin: 0 0 16px 0; font-size: 16px; color: #5c5f52;">Whatever you drive &mdash; a new Defender or a Series with not a straight panel in sight.</p>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <img src="tyro.jpg" alt="A Land Rover on a grassy Tyro course" style="width: 100%; height: 96px; object-fit: cover; border-radius: 2px;">
+        <h3 style="margin: 0; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 15px;">Tyro</h3>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <img src="rtv.jpg" alt="A Series III Land Rover on an RTV course" style="width: 100%; height: 96px; object-fit: cover; border-radius: 2px;">
+        <h3 style="margin: 0; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 15px;">RTV trial</h3>
+      </div>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+</body>
+</html>

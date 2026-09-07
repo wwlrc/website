@@ -1,0 +1,107 @@
+{
+  "artboards": [
+    {
+      "file": "Today.dc.html",
+      "title": "Today \u2014 the current site",
+      "x": 0,
+      "y": 0,
+      "w": 1024,
+      "h": 1000
+    },
+    {
+      "file": "OptionA.dc.html",
+      "title": "Option A \u2014 Club Green",
+      "x": 0,
+      "y": 1480,
+      "w": 1200,
+      "h": 1980
+    },
+    {
+      "file": "Main.dc.html",
+      "title": "Option B \u2014 Out on the Field",
+      "x": 1400,
+      "y": 1480,
+      "w": 1200,
+      "h": 2550
+    },
+    {
+      "file": "OptionC.dc.html",
+      "title": "Option C \u2014 Noticeboard",
+      "x": 2800,
+      "y": 1480,
+      "w": 1200,
+      "h": 1320
+    },
+    {
+      "file": "MobileA.dc.html",
+      "title": "Option A on a phone",
+      "x": 0,
+      "y": 4230,
+      "w": 390,
+      "h": 844
+    },
+    {
+      "file": "MobileB.dc.html",
+      "title": "Option B on a phone",
+      "x": 1400,
+      "y": 4230,
+      "w": 390,
+      "h": 844
+    },
+    {
+      "file": "MobileC.dc.html",
+      "title": "Option C on a phone",
+      "x": 2800,
+      "y": 4230,
+      "w": 390,
+      "h": 844
+    }
+  ],
+  "annotations": [
+    {
+      "id": "read-me",
+      "x": 1120,
+      "y": 0,
+      "w": 380,
+      "text": "Three directions for the homepage, plus how each looks on a phone.\n\nAnything in [square brackets] is a placeholder \u2014 event names, dates, venues and news titles all come live from Spanner, so I haven't invented any. Everything else is real club copy.\n\nThe photos are the club's own, pulled from the repo."
+    },
+    {
+      "id": "today-note",
+      "x": 1120,
+      "y": 420,
+      "w": 380,
+      "text": "What's making it feel cluttered today:\n\n\u2022 The page opens with an <h1> that just says \"Home\"\n\u2022 Everything sits at one size on one white slab \u2014 no hierarchy to follow\n\u2022 News posts render full-length, so one long one buries the rest\n\u2022 The 2.5MB background photo is only visible as a 12px margin\n\u2022 6 nav links + a two-line wordmark + an 80px logo all crammed into 1024px"
+    },
+    {
+      "id": "opt-a",
+      "x": 0,
+      "y": 1180,
+      "w": 420,
+      "text": "OPTION A \u2014 CLUB GREEN\nThe careful fix.\n\nSame structure, same pages, same familiar feel \u2014 but with a real hero, a proper type ramp, and generous space. News is trimmed to excerpts so one long post can't take over.\n\nWhy: lowest risk. Nobody in the club has to relearn anything, and it's the quickest to build.\n\nTradeoff: safe. It solves the clutter but nothing about it will stop a stranger scrolling past."
+    },
+    {
+      "id": "opt-b",
+      "x": 1400,
+      "y": 1180,
+      "w": 420,
+      "text": "OPTION B \u2014 OUT ON THE FIELD\nLead with the mud.\n\nFull-bleed photo hero, big confident type, then the five disciplines shown as photos rather than described in paragraphs. Built to recruit.\n\nWhy: the club's best asset is what it looks like on a wet Sunday, and right now the site hides that behind a white box.\n\nTradeoff: it lives or dies on the photography \u2014 someone has to keep feeding it good pictures. Heaviest page of the three, and a member wanting to book scrolls past the hero to get there."
+    },
+    {
+      "id": "opt-c",
+      "x": 2800,
+      "y": 1180,
+      "w": 420,
+      "text": "OPTION C \u2014 NOTICEBOARD\nWhat's on, can I book.\n\nNo hero at all. The events board IS the homepage, grouped by month with clear booking states, and everything else moves to a sidebar. The whole thing fits on one screen.\n\nWhy: for the hundred-plus existing members, this is the only question the site ever has to answer.\n\nTradeoff: coldest of the three to a newcomer, and it looks empty in the quiet months when there's nothing in the calendar."
+    },
+    {
+      "id": "mobile-note",
+      "x": 0,
+      "y": 3970,
+      "w": 480,
+      "text": "Phone views \u2014 worth weighing these heavily. Most people will meet this site on a phone, and the current one squeezes a 5em logo and a two-line wordmark into 390px before you reach any content."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

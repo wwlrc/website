@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap">
+  <style>
+    body { margin: 0; background: #16281d; font-family: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif; }
+    a { color: #0b7ea8; text-decoration: none; }
+    a:hover { color: #085e7d; }
+  </style>
+</helmet>
+
+<div style="width: 1200px; background: #ffffff; color: #1b1d1a; font-family: 'Source Sans 3', 'Segoe UI', Helvetica, Arial, sans-serif;">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 18px 80px; border-bottom: 1px solid #e2e0da; background: #ffffff;">
+    <a href="#" style="display: flex; align-items: center; gap: 14px; color: #1b1d1a;">
+      <img src="logo.png" alt="Wye &amp; Welsh Land Rover Club" style="width: 52px; height: 52px; object-fit: contain;">
+      <span style="font-family: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.15; letter-spacing: -0.01em;">Wye &amp; Welsh<br>Land Rover Club</span>
+    </a>
+    <nav style="display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 600;">
+      <a href="#" style="color: #1f4d33; border-bottom: 2px solid #1f4d33; padding-bottom: 2px;">Home</a>
+      <a href="#" style="color: #454a46;">About</a>
+      <a href="#" style="color: #454a46;">Join</a>
+      <a href="#" style="color: #454a46;">Events</a>
+      <a href="#" style="color: #454a46;">Sponsors</a>
+      <a href="#" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border: 1px solid #cfd4cd; border-radius: 4px; color: #1f4d33;">Members&rsquo; login</a>
+    </nav>
+  </header>
+
+  <section style="background: #eef3ef; padding: 64px 80px; border-bottom: 1px solid #dde5df;">
+    <div style="display: grid; grid-template-columns: 1fr 460px; gap: 56px; align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 22px; align-items: flex-start;">
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: #3d6b50;">Wye Valley &amp; Forest of Dean &middot; since 1987</span>
+        <h1 style="margin: 0; font-family: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 46px; line-height: 1.08; letter-spacing: -0.022em; color: #16281d; text-wrap: pretty;">Land rovering in the Wye Valley and the border country</h1>
+        <p style="margin: 0; font-size: 18px; line-height: 1.55; color: #4a504b; max-width: 46ch;">One event a month, usually the third Sunday. Over a hundred members from Hereford down towards Gloucester and all points west &mdash; and you&rsquo;re very welcome to turn up and watch.</p>
+        <div style="display: flex; gap: 12px; padding-top: 4px;">
+          <a href="#" style="display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 22px; background: #1f4d33; color: #ffffff; border-radius: 4px; font-weight: 600; font-size: 16px;">
+            See what&rsquo;s on next
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+          <a href="#" style="display: inline-flex; align-items: center; height: 48px; padding: 0 22px; background: #ffffff; color: #1f4d33; border: 1px solid #c3cec6; border-radius: 4px; font-weight: 600; font-size: 16px;">How to join</a>
+        </div>
+      </div>
+      <img src="hero.jpg" alt="Land Rovers lined up at the top of a muddy trials course" style="width: 460px; height: 330px; object-fit: cover; object-position: center 26%; border-radius: 6px;">
+    </div>
+  </section>
+
+  <section style="padding: 56px 80px; background: #ffffff;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 26px;">
+      <h2 style="margin: 0; font-family: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.015em; color: #16281d;">What&rsquo;s on next</h2>
+      <a href="#" style="font-size: 15px; font-weight: 600;">All events &rarr;</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;">
+
+      <div style="display: flex; flex-direction: column; gap: 12px; border: 1px solid #e2e0da; border-radius: 6px; padding: 22px; background: #ffffff;">
+        <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #0b7ea8;">[Sun 00 Month]</span>
+        <h3 style="margin: 0; font-family: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.25; color: #1b1d1a;">[Event name]</h3>
+        <span style="align-self: flex-start; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 3px; background: #eef3ef; color: #2c5a3f;">RTV trial</span>
+        <div style="display: flex; align-items: center; gap: 7px; font-size: 15px; color: #5f6560;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          [Venue, postcode]
+        </div>
+        <div style="border-top: 1px solid #eeece6; padding-top: 14px; margin-top: 4px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <span style="font-size: 13px; font-weight: 600; color: #1e7a4a;">Bookings open</span>
+          <a href="#" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; background: #0b7ea8; color: #ffffff; border-radius: 4px; font-weight: 600; font-size: 15px;">Book</a>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; border: 1px solid #e2e0da; border-radius: 6px; padding: 22px; background: #ffffff;">
+        <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #0b7ea8;">[Sun 00 Month]</span>
+        <h3 style="margin: 0; font-family: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.25; color: #1b1d1a;">[Event name]</h3>
+        <span style="align-self: flex-start; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 3px; background: #eef3ef; color: #2c5a3f;">Tyro trial</span>
+        <div style="display: flex; align-items: center; gap: 7px; font-size: 15px; color: #5f6560;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          [Venue, postcode]
+        </div>
+        <div style="border-top: 1px solid #eeece6; padding-top: 14px; margin-top: 4px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <span style="font-size: 13px; font-weight: 600; color: #a86413;">Opening soon</span>
+          <a href="#" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border: 1px solid #cfd4cd; color: #454a46; border-radius: 4px; font-weight: 600; font-size: 15px;">Details</a>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; border: 1px solid #e2e0da; border-radius: 6px; padding: 22px; background: #ffffff;">
+        <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #0b7ea8;">[Sat 00 &ndash; Mon 00 Month]</span>
+        <h3 style="margin: 0; font-family: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.25; color: #1b1d1a;">Wye &amp; Welsh Challenge</h3>
+        <span style="align-self: flex-start; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 3px; background: #f3ece0; color: #7a5314;">Interclub weekend</span>
+        <div style="display: flex; align-items: center; gap: 7px; font-size: 15px; color: #5f6560;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          [Venue, postcode]
+        </div>
+        <div style="border-top: 1px solid #eeece6; padding-top: 14px; margin-top: 4px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <span style="font-size: 13px; font-weight: 600; color: #a86413;">Opening soon</span>
+          <a href="#" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border: 1px solid #cfd4cd; color: #454a46; border-radius: 4px; font-weight: 600; font-size: 15px;">Details</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding: 56px 80px; background: #f7f6f3; border-top: 1px solid #ebe9e3; border-bottom: 1px solid #ebe9e3;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 22px;">
+      <h2 style="margin: 0; font-family: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.015em; color: #16281d;">Latest news</h2>
+      <a href="#" style="font-size: 15px; font-weight: 600;">All news &rarr;</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px;">
+      <article style="display: flex; flex-direction: column; gap: 8px;">
+        <h3 style="margin: 0; font-family: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 20px; line-height: 1.3; color: #1b1d1a;">[News post title]</h3>
+        <span style="font-size: 13px; color: #7b807a;">[00 Month 2026] &middot; [Author]</span>
+        <p style="margin: 4px 0 0 0; font-size: 16px; line-height: 1.6; color: #4a504b;">[The first couple of lines of the post, trimmed to a fixed length so one long post can&rsquo;t push the rest of the page out of sight.]</p>
+        <a href="#" style="font-size: 15px; font-weight: 600; margin-top: 4px;">Read more &rarr;</a>
+      </article>
+      <article style="display: flex; flex-direction: column; gap: 8px;">
+        <h3 style="margin: 0; font-family: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 20px; line-height: 1.3; color: #1b1d1a;">[News post title]</h3>
+        <span style="font-size: 13px; color: #7b807a;">[00 Month 2026] &middot; [Author]</span>
+        <p style="margin: 4px 0 0 0; font-size: 16px; line-height: 1.6; color: #4a504b;">[The first couple of lines of the post.]</p>
+        <a href="#" style="font-size: 15px; font-weight: 600; margin-top: 4px;">Read more &rarr;</a>
+      </article>
+    </div>
+  </section>
+
+  <section style="padding: 56px 80px; background: #ffffff;">
+    <h2 style="margin: 0 0 26px 0; font-family: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.015em; color: #16281d;">New to all this?</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <h3 style="margin: 0; font-family: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 18px; color: #1b1d1a;">Come and watch, free</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4a504b;">Turn up at any event, have a look round and ask us anything. No membership needed to spectate.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <h3 style="margin: 0; font-family: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 18px; color: #1b1d1a;">Membership from &pound;1</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4a504b;">Full &pound;30 a year, family and associate &pound;10, juniors and children &pound;1. Apply online or by post.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <h3 style="margin: 0; font-family: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 18px; color: #1b1d1a;">Five disciplines</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4a504b;">Tyro, road-taxed vehicle trials, cross-country, time trials and competitive safari.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #16281d; color: #d6e0d8; padding: 48px 80px 32px 80px;">
+    <div style="display: grid; grid-template-columns: 1.4fr 1fr 1.2fr; gap: 48px;">
+      <div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start;">
+        <span style="font-family: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 17px; color: #ffffff;">Wye &amp; Welsh Land Rover Club</span>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #a8b8ac;">Founded July 1987 by Land Rover owners around the Wye Valley and the Forest of Dean.</p>
+        <a href="#" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px; border: 1px solid #3d5545; border-radius: 4px; color: #d6e0d8; font-size: 15px; font-weight: 600;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          Facebook group
+        </a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
+        <span style="font-weight: 600; color: #ffffff; margin-bottom: 4px;">Explore</span>
+        <a href="#" style="color: #a8b8ac;">About the club</a>
+        <a href="#" style="color: #a8b8ac;">Events calendar</a>
+        <a href="#" style="color: #a8b8ac;">Join us</a>
+        <a href="#" style="color: #a8b8ac;">Our sponsors</a>
+        <a href="#" style="color: #a8b8ac;">Members&rsquo; login</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
+        <span style="font-weight: 600; color: #ffffff; margin-bottom: 4px;">With thanks to our sponsors</span>
+        <span style="color: #a8b8ac; line-height: 1.7;">Abergavenny Brake &amp; Clutch &middot; Caldicot Windows &amp; Building Services &middot; Muddy Series 4x4 &middot; Whitecliff 4x4 &middot; Lewis Thomas Spares &middot; AK Inspection Services &middot; A. Morgan Property Maintenance &middot; Wye Valley Carpet &amp; Upholstery Cleaners</span>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #2a3f31; margin-top: 32px; padding-top: 20px; font-size: 14px; color: #8b9c8f;">&copy; 2026 Wye &amp; Welsh Land Rover Club</div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>
