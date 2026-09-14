@@ -2,17 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --foreground-rgb: 0, 0, 0;
-    --background-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --foreground-rgb: 255, 255, 255;
-    }
-}
-
 html {
     /*
   * This forces the scrollbar to stay on all the time,
@@ -20,15 +9,6 @@ html {
   * everything else
   */
     overflow-y: scroll;
-}
-
-body {
-    color: rgb(var(--foreground-rgb));
-    background-image: url("/background.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: top;
 }
 
 @layer utilities {

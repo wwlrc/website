@@ -11,8 +11,8 @@ export default async function Events() {
   let events = await getEvents();
 
   return (
-    <main>
-      <h1 className="text-2xl font-bold mb-3">Events</h1>
+    <main className="mx-auto max-w-screen-xl px-4 py-10 text-ink/80 sm:px-8 sm:py-14">
+      <h1 className="font-heading mb-4 text-3xl font-semibold text-blue-950">Events</h1>
 
       <SpannerCalendar staticEvents={events} />
     </main>

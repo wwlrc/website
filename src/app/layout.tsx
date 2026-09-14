@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Libre_Franklin, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import Head from "next/head";
 
-const inter = Inter({ subsets: ["latin"] });
+const libreFranklin = Libre_Franklin({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-heading",
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-body",
+});
 
 export const metadata: Metadata = {
   title: "Wye & Welsh LRC",
@@ -20,22 +28,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <Head>
-        <link rel="preload" as="image" href="background.jpg"></link>
-      </Head>
-      <body className={inter.className}>
-        <div className="max-w-screen-lg mx-auto p-3">
-          <div className="bg-white dark:bg-gray-900 dark:bg-opacity-90 bg-opacity-90 p-4 rounded-t-lg">
-            <Navbar />
-          </div>
-          <div className="bg-green-600 dark:bg-green-900 h-0.5"></div>
-          <div className="bg-white dark:bg-gray-900 p-4">{children}</div>
-          <div className="bg-gray-400 dark:bg-gray-700 h-0.5"></div>
-          <div className="bg-white dark:bg-gray-900 rounded-b-lg p-4">
-            <Footer />
-          </div>
-        </div>
+    <html
+      lang="en"
+      className={`${libreFranklin.variable} ${sourceSans.variable}`}
+    >
+      <body className="flex min-h-screen flex-col bg-ground text-ink">
+        <Navbar />
+        <div className="flex-1">{children}</div>
+        <Footer />
       </body>
     </html>
   );

@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import { cloneElement } from "react";
 
 export const metadata: Metadata = {
   title: "Wye & Welsh LRC | About",
@@ -22,84 +21,47 @@ type Person = {
 
 function personCard(person: Person) {
   return (
-    <a className="flex flex-row bg-white border border-gray-200 rounded-lg shadow-sm  dark:border-gray-700 dark:bg-gray-800 h-full col-span-2">
+    <div className="flex h-full items-center gap-4 border border-stone bg-white p-4">
       <Image
-        key="image"
         src={person.picture}
         alt={"Picture of " + person.name}
         width={0}
         height={0}
         quality={25}
-        className="object-cover w-full max-w-32 h-auto md:h-auto rounded-l-lg"
+        className="h-16 w-16 shrink-0 rounded-full object-cover"
       />
-      <div key="description" className="flex flex-col p-4 leading-normal">
-        <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <div className="flex flex-col gap-1">
+        <h5 className="font-heading text-base font-semibold text-ink">
           {person.name}
         </h5>
-        <ul className="font-normal text-base text-gray-700 dark:text-gray-400">
+        <ul className="text-sm text-ink/70">
           {person.roles.map((role) => (
             <li key={role}>{role}</li>
           ))}
         </ul>
       </div>
-    </a>
+    </div>
   );
 }
 
-function eventCard(eventType: EventType, rightImageAlign: boolean) {
-  let items: JSX.Element[] = [];
-
-  let image = (
-    <Image
-      key="image"
-      src={eventType.picture}
-      alt={eventType.pictureAlt}
-      width={0}
-      height={0}
-      quality={25}
-      className="object-cover w-full rounded-t-lg h-64 md:h-auto md:w-64 md:rounded-none"
-    />
-  );
-
-  let rightImage = null;
-  if (rightImageAlign) {
-    rightImage = cloneElement(image, {
-      key: "right-image",
-      className: image.props.className + " hidden md:block md:rounded-r-lg",
-    });
-    image = cloneElement(image, {
-      className: image.props.className + " md:hidden",
-    });
-  } else {
-    image = cloneElement(image, {
-      className: image.props.className + " md:rounded-s-lg",
-    });
-  }
-
-  items.push(image);
-
-  items.push(
-    <div
-      key="description"
-      className="flex flex-col justify-between p-4 leading-normal"
-    >
-      <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-        {eventType.title}
-      </h5>
-      <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        {eventType.description}
-      </p>
-    </div>,
-  );
-
-  if (rightImage != null) {
-    items.push(rightImage);
-  }
-
+function eventCard(eventType: EventType) {
   return (
-    <a className="flex flex-col bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row  dark:border-gray-700 dark:bg-gray-800 mt-2 md:max-w-screen-md">
-      {items.map((element: JSX.Element) => element)}
-    </a>
+    <div className="flex h-full flex-col overflow-hidden border border-stone bg-white">
+      <Image
+        src={eventType.picture}
+        alt={eventType.pictureAlt}
+        width={0}
+        height={0}
+        quality={25}
+        className="h-56 w-full object-cover"
+      />
+      <div className="flex flex-col gap-2 p-5">
+        <h5 className="font-heading text-lg font-semibold text-ink">
+          {eventType.title}
+        </h5>
+        <p className="text-ink/80">{eventType.description}</p>
+      </div>
+    </div>
   );
 }
 
@@ -188,18 +150,13 @@ var people: Person[] = [
   },
   {
     name: "John Ireland",
-    roles: ["Secretary"],
+    roles: ["Secretary", "ALRC Representative", "Safety & Safeguarding Officer"],
     picture: "/mugshots/johni.png",
   },
   {
     name: "Sarah Thomas",
     roles: ["Treasurer"],
     picture: "/mugshots/saraht.png",
-  },
-  {
-    name: "Peter Gladman",
-    roles: ["ALRC Representative", "Safety & Safeguarding Officer"],
-    picture: "/mugshots/peterg.jpg",
   },
   {
     name: "Anthony Knight",
@@ -275,8 +232,8 @@ var people: Person[] = [
 
 export default function About() {
   return (
-    <main>
-      <h1 className="text-2xl font-bold mb-3">About</h1>
+    <main className="mx-auto max-w-screen-xl px-4 py-10 text-ink/80 sm:px-8 sm:py-14">
+      <h1 className="font-heading mb-4 text-3xl font-semibold text-blue-950">About</h1>
       <p className="mb-2">
         The club was set up, in July 1987, by a group of mainly Land Rover
         owners who lived mostly in the Wye Valley and the Forest of Dean. It was
@@ -299,9 +256,11 @@ export default function About() {
       <p className="mb-2">
         We try to organise events every month. These events are :-
       </p>
-      <div className="flex flex-col items-center w-full">
+      <div className="flex w-full flex-wrap justify-center gap-4">
         {eventTypes.map((eventType: EventType, id: number) => (
-          <div key={id}>{eventCard(eventType, id % 2 == 0)}</div>
+          <div key={id} className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]">
+            {eventCard(eventType)}
+          </div>
         ))}
       </div>
       <h6 className="text-xl font-bold mb-2 mt-5">
