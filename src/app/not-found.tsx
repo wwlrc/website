@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main>
-      <h1 className="text-2xl font-bold mb-3">Page Not Found</h1>
+    <main className="mx-auto max-w-screen-xl px-4 py-10 text-ink/80 sm:px-8 sm:py-14">
+      <h1 className="font-heading mb-4 text-3xl font-semibold text-blue-950">Page Not Found</h1>
       <p className="mb-4">The requested page could not be found :/</p>
       <Image src="/404.webp" alt="404" width={500} height={500} />
     </main>
