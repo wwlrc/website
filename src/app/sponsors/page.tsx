@@ -3,6 +3,7 @@ import SponsorGallery from "./gallery";
 
 export const metadata: Metadata = {
   title: "Wye & Welsh LRC | Sponsors",
+  description: "Meet the businesses supporting the Wye & Welsh Land Rover Club.",
 };
 
 export default function Sponsors() {

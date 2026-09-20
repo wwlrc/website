@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Wye & Welsh LRC | Events",
-  description: "Learn more about the Wye & Welsh Land Rover Club.",
+  description: "See upcoming trials, rallies and socials, and book your place at the next WWLRC event.",
 };
 
 export default async function Events() {

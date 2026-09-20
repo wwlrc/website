@@ -17,9 +17,26 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://wwlrc.co.uk"),
   title: "Wye & Welsh LRC",
   description:
     "Welcome to the Wye & Welsh Land Rover Club website. Visit this website to see the latest news, events and photos.",
+  openGraph: {
+    siteName: "Wye & Welsh Land Rover Club",
+    type: "website",
+    locale: "en_GB",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1920,
+        height: 560,
+        alt: "Land Rovers taking part in a green-laning trial",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
