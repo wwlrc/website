@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 
 type Sponsor = {
   src: string;
@@ -8,7 +8,7 @@ type Sponsor = {
   href: string | null;
 };
 
-let sponsors: Sponsor[] = [
+const sponsors: Sponsor[] = [
   {
     src: "/sponsors/abc.jpg",
     alt: "Abergavenny Brake & Clutch",
@@ -49,22 +49,25 @@ let sponsors: Sponsor[] = [
     alt: "AK Inspection Services",
     href: "tel:+44 7765 196119",
   },
-].sort(() => Math.random() - 0.5);
+];
+
+function shuffled(items: Sponsor[]): Sponsor[] {
+  const out = [...items];
+
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+
+  return out;
+}
 
 export default function SponsorGallery() {
-  const [images, setImages] = useState<Sponsor[]>([]);
+  const [images, setImages] = useState<Sponsor[]>(sponsors);
 
-  useEffect(() => {
-    (async () => setImages(sponsors))();
-  }, []);
-
-  if (images.length == 0) {
-    return (
-      <main>
-        <div className="h-dvh">Loading...</div>
-      </main>
-    );
-  }
+  // Shuffling during the render would give the prerender and the client
+  // different orders, so it happens once the markup is already hydrated.
+  useEffect(() => setImages(shuffled(sponsors)), []);
 
   const img = (image: Sponsor) => {
     let result = (
@@ -92,8 +95,8 @@ export default function SponsorGallery() {
   return (
     <main>
       <div className="grid grid-cols-1 md:grid-cols-2">
-        {images.map((image, id) => (
-          <div key={id} className="col-span-1 text-center">
+        {images.map((image) => (
+          <div key={image.src} className="col-span-1 text-center">
             <h2 className="font-bold mb-2 mt-4">{image.alt}</h2>
             {img(image)}
           </div>
