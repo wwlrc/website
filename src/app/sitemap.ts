@@ -17,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: 'https://wwlrc.co.uk/events',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
       url: 'https://wwlrc.co.uk/join',
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -24,12 +30,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://wwlrc.co.uk/sponsors',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://spanner.wwlrc.co.uk/account/sign-in',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.5,
