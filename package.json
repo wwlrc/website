@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "bun run scripts/dev.ts",
-    "build": "next build",
+    "build": "NEXT_PUBLIC_SPANNER_API_URL=https://spanner.wwlrc.co.uk next build",
     "start": "next start",
     "lint": "eslint ."
   },

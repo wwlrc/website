@@ -1,8 +1,8 @@
-import { spannerApiFetch } from "./api";
+import { spannerPublicApiFetch } from "./api";
 import { wwlrcClubId } from "./wwlrc";
 
 export async function getPosts(): Promise<any[]> {
-  let data = await spannerApiFetch("news", {
+  let data = await spannerPublicApiFetch("news", {
     clubs: wwlrcClubId,
   });
 
