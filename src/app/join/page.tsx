@@ -1,6 +1,6 @@
 import { spannerPathCat } from "@/spanner/api";
 import { wwlrcClubId } from "@/spanner/wwlrc";
-import { Download, ExternalLinkIcon } from "lucide-react";
+import { Check, Download, ExternalLinkIcon, X } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -24,17 +24,27 @@ type MembershipType = {
   votes: MembershipRight;
 };
 
-function renderMembershipRight(right: MembershipRight): string {
-  switch (right) {
-    case MembershipRight.Yes:
-      return "✅";
-    case MembershipRight.No:
-      return "❌";
-    case MembershipRight.YesAge:
-      return "✅*";
-    default:
-      return "";
+const benefitColumns: { key: keyof MembershipType; label: string }[] = [
+  { key: "competes", label: "Compete" },
+  { key: "newsletter", label: "Newsletter" },
+  { key: "marshals", label: "Marshal" },
+  { key: "votes", label: "Vote" },
+];
+
+function renderMembershipRight(right: MembershipRight) {
+  if (right === MembershipRight.No) {
+    return (
+      <X className="inline h-5 w-5 text-ink/30" strokeWidth={2.5} aria-label="No" />
+    );
   }
+  return (
+    <span className="inline-flex items-center gap-0.5 text-green-600">
+      <Check className="h-6 w-6" strokeWidth={3} aria-label="Yes" />
+      {right === MembershipRight.YesAge && (
+        <span className="text-sm text-ink/60">*</span>
+      )}
+    </span>
+  );
 }
 
 export default function Join() {
@@ -89,8 +99,8 @@ export default function Join() {
   ];
 
   return (
-    <main>
-      <h1 className="text-2xl font-bold mb-3">Join</h1>
+    <main className="mx-auto max-w-screen-xl px-4 py-10 text-ink/80 sm:px-8 sm:py-14">
+      <h1 className="font-heading mb-4 text-3xl font-semibold text-blue-950">Join</h1>
 
       <p className="mb-2">
         If you are interested in joining, you&apos;re welcome to come along to
@@ -109,63 +119,87 @@ export default function Join() {
         year. See below for the different types that are available.
       </p>
 
-      <div
-        className="overflow-x-auto mb-2 scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-200"
-        style={{
-          scrollbarColor: "#6B7280 #E5E7EB",
-          scrollbarWidth: "auto",
-        }}
-      >
-        <table className="table-auto border-gray w-full min-w-[768px] bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden">
-          <thead className="bg-gray-200 dark:bg-gray-600">
-            <tr className="border-b border-grey-700">
-              <th className="px-2 py-2 w-8" rowSpan={2}>
+      <div className="mb-2 flex flex-col gap-3 md:hidden">
+        {membershipTypes.map((type) => (
+          <div
+            key={type.name}
+            className="rounded-lg border border-stone bg-white p-4"
+          >
+            <div className="flex items-baseline justify-between gap-2">
+              <h4 className="font-heading text-lg font-semibold text-ink">
+                {type.name}
+              </h4>
+              <span className="font-heading text-lg font-semibold text-blue-700">
+                {type.price}
+              </span>
+            </div>
+            <p className="mt-1 text-ink/70">{type.requirements}</p>
+            <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 border-t border-stone pt-3 text-sm">
+              {benefitColumns.map((column) => (
+                <div key={column.key} className="flex items-center justify-between">
+                  <span className="text-ink/70">{column.label}</span>
+                  {renderMembershipRight(type[column.key] as MembershipRight)}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+        <p className="text-sm italic text-ink/60">
+          *Age requirements may vary depending on the event.
+        </p>
+      </div>
+
+      <div className="mb-2 hidden overflow-hidden rounded-lg border border-stone md:block">
+        <table className="w-full border-collapse bg-white text-left">
+          <thead className="bg-white">
+            <tr className="border-b border-stone">
+              <th className="px-4 py-3 font-heading text-ink" rowSpan={2}>
                 Type
                 <br />
-                <i>Price</i>
+                <span className="font-normal italic text-ink/60">Price</span>
               </th>
-              <th className="px-2 py-2 w-64" rowSpan={2}>
+              <th className="px-4 py-3 font-heading text-ink" rowSpan={2}>
                 Description
               </th>
-              <th className="px-2 py-2" colSpan={4}>
-                Membership Benefits
+              <th
+                className="px-4 py-3 text-center font-heading text-ink"
+                colSpan={4}
+              >
+                Membership benefits
               </th>
             </tr>
-            <tr className="border-b border-grey-700">
-              <th className="px-2 py-2 w-16">Compete</th>
-              <th className="px-2 py-2 w-16">Newsletter</th>
-              <th className="px-2 py-2 w-16">Marshal</th>
-              <th className="px-2 py-2 w-16">Vote</th>
+            <tr className="border-b border-stone">
+              {benefitColumns.map((column) => (
+                <th
+                  key={column.key}
+                  className="w-28 px-4 py-2 text-center text-sm font-semibold text-ink/70"
+                >
+                  {column.label}
+                </th>
+              ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody className="divide-y divide-stone">
             {membershipTypes.map((type) => (
-              <tr key={type.name} className="border-b border-grey-700">
-                <td className="px-2 py-2">
+              <tr key={type.name}>
+                <td className="px-4 py-3">
                   {type.name}
                   <br />
-                  <i>{type.price}</i>
+                  <span className="italic text-ink/60">{type.price}</span>
                 </td>
-                <td className="px-2 py-2">{type.requirements}</td>
-                <td className="px-2 py-2 text-center">
-                  {renderMembershipRight(type.competes)}
-                </td>
-                <td className="px-2 py-2 text-center">
-                  {renderMembershipRight(type.newsletter)}
-                </td>
-                <td className="px-2 py-2 text-center">
-                  {renderMembershipRight(type.marshals)}
-                </td>
-                <td className="px-2 py-2 text-center">
-                  {renderMembershipRight(type.votes)}
-                </td>
+                <td className="px-4 py-3">{type.requirements}</td>
+                {benefitColumns.map((column) => (
+                  <td key={column.key} className="px-4 py-3 text-center">
+                    {renderMembershipRight(type[column.key] as MembershipRight)}
+                  </td>
+                ))}
               </tr>
             ))}
           </tbody>
-          <tfoot className="bg-gray-200 dark:bg-gray-600">
-            <tr>
-              <td className="px-2 py-2" colSpan={6}>
-                *<i>Age requirements may vary depending on the event.</i>
+          <tfoot>
+            <tr className="border-t border-stone bg-stone/10">
+              <td className="px-4 py-2 text-sm italic text-ink/60" colSpan={6}>
+                *Age requirements may vary depending on the event.
               </td>
             </tr>
           </tfoot>

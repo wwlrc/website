@@ -18,3 +18,14 @@ export async function getEvents() {
 
   return events;
 }
+
+export function upcomingEvents(events: any[]): any[] {
+  const now = new Date();
+  return events.filter((event: any) => new Date(event.end_date) >= now);
+}
+
+// Booking status goes stale between the build and the visit, so the prerendered
+// list carries none until the client has refetched.
+export function clearBookingStatus(events: any[]): any[] {
+  return events.map(({ bookings_status, ...event }: any) => event);
+}

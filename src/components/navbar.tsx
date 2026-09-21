@@ -1,105 +1,142 @@
 "use client";
 
 import Link from "next/link";
-import NavbarBtn from "./navbar_btn";
-import React, { useEffect } from "react";
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+
+const links = [
+  { href: "/about", label: "About" },
+  { href: "/events", label: "Events" },
+  { href: "/sponsors", label: "Sponsors" },
+];
 
 export default function Navbar() {
-  const [navbarOpen, setNavbarOpen] = React.useState(false);
-
-  const navbarToggle = () => {
-    setNavbarOpen(!navbarOpen);
-  };
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    (async () => {
-      setNavbarOpen(false);
-    })();
-  }, []);
+    setOpen(false);
+  }, [pathname]);
 
   return (
-    <nav>
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+    <header className="sticky top-0 z-50 border-b-2 border-stone bg-white">
+      <div className="mx-auto flex max-w-screen-xl items-center justify-between gap-6 px-4 py-3 sm:px-8">
         <Link
           href="/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
+          className="flex items-center gap-3 text-ink"
         >
-          <div className="relative h-[5em] w-[5em] mr-4">
-            <Image src="/logo.gif" alt="Logo" fill={true} />
-          </div>
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Wye & Welsh<br></br>
-            Land Rover Club
+          <span className="relative h-14 w-14 shrink-0">
+            <Image
+              src="/logo.gif"
+              alt="Wye & Welsh Land Rover Club badge"
+              fill
+              className="object-contain"
+            />
+          </span>
+          <span
+            className="whitespace-nowrap uppercase leading-tight tracking-wide text-blue-600 [-webkit-text-stroke:0.3px_black]"
+            style={{
+              fontFamily:
+                '"Franklin Gothic Heavy", "Franklin Gothic Medium", var(--font-heading), Arial, sans-serif',
+            }}
+          >
+            <span className="block text-xl">
+              Wye &amp; Welsh
+            </span>
+            <span
+              className="block text-base font-bold"
+            >
+              Land Rover Club
+            </span>
           </span>
         </Link>
-        <button
-          onClick={navbarToggle}
-          data-collapse-toggle="navbar-default"
-          type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-default"
-          aria-expanded="false"
-        >
-          <span className="sr-only">Open main menu</span>
-          <svg
-            className="w-5 h-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14"
+
+        <nav className="hidden items-center gap-7 text-sm font-semibold md:flex">
+          {links.map((link) => {
+            const active = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={
+                  active
+                    ? "border-b-2 border-blue-600 pb-0.5 text-blue-700"
+                    : "text-ink/70 hover:text-blue-700"
+                }
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+          <Link href="/join" className="font-bold text-blue-700 hover:underline">
+            Join
+          </Link>
+          <a
+            href="https://spanner.wwlrc.co.uk/account/sign-in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-ink/70 hover:text-blue-700"
           >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M1 1h15M1 7h15M1 13h15"
-            />
+            Members&rsquo; login
+            <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+          </a>
+        </nav>
+
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          aria-controls="mobile-nav"
+          className="flex h-11 w-11 items-center justify-center rounded border border-stone text-blue-700 md:hidden"
+        >
+          <span className="sr-only">Menu</span>
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            aria-hidden="true"
+          >
+            <path d="M4 7h16" />
+            <path d="M4 12h16" />
+            <path d="M4 17h16" />
           </svg>
         </button>
-        <div
-          hidden={!navbarOpen}
-          className="w-full md:block md:w-auto"
-          id="navbar-default"
-        >
-          <ul className="font-medium flex flex-col md:p-3 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
-            <li>
-              <Link href="/">
-                <NavbarBtn>Home</NavbarBtn>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <NavbarBtn>About</NavbarBtn>
-              </Link>
-            </li>
-            <li>
-              <Link href="/join">
-                <NavbarBtn>Join</NavbarBtn>
-              </Link>
-            </li>
-            <li>
-              <Link href="/events">
-                <NavbarBtn>Events</NavbarBtn>
-              </Link>
-            </li>
-            <li className="lg:block md:hidden sm:block">
-              <Link href="/sponsors">
-                <NavbarBtn>Sponsors</NavbarBtn>
-              </Link>
-            </li>
-            <li>
-              <a
-                href="https://spanner.wwlrc.co.uk/account/sign-in"
-                target="_blank"
-              >
-                <NavbarBtn>Login</NavbarBtn>
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
-    </nav>
+
+      {open && (
+        <nav
+          id="mobile-nav"
+          className="flex flex-col gap-1 border-t border-stone px-4 py-3 text-sm font-semibold md:hidden"
+        >
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded px-2 py-2 text-ink/70 hover:bg-gray-100"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link href="/join" className="px-2 py-2 text-blue-700">
+            Join
+          </Link>
+          <a
+            href="https://spanner.wwlrc.co.uk/account/sign-in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 rounded px-2 py-2 text-ink/70 hover:bg-gray-100"
+          >
+            Members&rsquo; login
+            <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+          </a>
+        </nav>
+      )}
+    </header>
   );
 }
