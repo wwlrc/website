@@ -48,7 +48,7 @@ export default function LoginStatus({
         rel="noopener noreferrer"
         className={classes.name}
       >
-        {user.first_name}
+        {user.first_name} {user.last_name}
         <UserIcon className="h-3.5 w-3.5" aria-hidden="true" />
       </a>
     );
