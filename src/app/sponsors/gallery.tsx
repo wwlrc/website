@@ -20,19 +20,19 @@ const sponsors: Sponsor[] = [
     href: "mailto:chippyatwork78@gmail.com",
   },
   {
-    src: "/sponsors/muddyseries4x4.jpg",
-    alt: "Muddy Series 4x4",
-    href: "https://www.ebay.co.uk/str/seriesuser4x4",
-  },
-  {
     src: "/sponsors/whitecliff4x4.jpg",
     alt: "Whitecliff 4x4",
     href: "https://www.whitecliff4x4.co.uk/",
   },
   {
-    src: "/sponsors/lewis-thomas-spares.png",
-    alt: "Lewis Thomas Spares",
-    href: "tel:+44 7876 826194",
+    src: "/sponsors/jwlrs.png",
+    alt: "JWLRS - Jim Willett Land Rover Specialist",
+    href: "https://www.jwlrs.co.uk/",
+  },
+  {
+    src: "/sponsors/simon-walters.png",
+    alt: "Simon Walters",
+    href: "tel:+44 1495 245334",
   },
   {
     src: "/sponsors/wye-valley-carpet-and-upholstery-cleaners.png",
