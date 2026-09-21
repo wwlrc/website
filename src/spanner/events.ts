@@ -1,8 +1,8 @@
-import { spannerApiFetch } from "./api";
+import { spannerPublicApiFetch } from "./api";
 import { wwlrcClubId } from "./wwlrc";
 
 export async function getEvents() {
-  let data = await spannerApiFetch("/rallies", {
+  let data = await spannerPublicApiFetch("/rallies", {
     clubId: wwlrcClubId,
     size: 25,
     page: 0,
