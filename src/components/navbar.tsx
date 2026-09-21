@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import LoginStatus from "./navbar/login";
 
 const links = [
   { href: "/about", label: "About" },
@@ -70,18 +70,7 @@ export default function Navbar() {
               </Link>
             );
           })}
-          <Link href="/join" className="font-bold text-blue-700 hover:underline">
-            Join
-          </Link>
-          <a
-            href="https://spanner.wwlrc.co.uk/account/sign-in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-ink/70 hover:text-blue-700"
-          >
-            Members&rsquo; login
-            <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-          </a>
+          <LoginStatus variant="desktop" />
         </nav>
 
         <button
@@ -123,18 +112,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="/join" className="px-2 py-2 text-blue-700">
-            Join
-          </Link>
-          <a
-            href="https://spanner.wwlrc.co.uk/account/sign-in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded px-2 py-2 text-ink/70 hover:bg-gray-100"
-          >
-            Members&rsquo; login
-            <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-          </a>
+          <LoginStatus variant="mobile" />
         </nav>
       )}
     </header>
