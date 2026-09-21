@@ -42,20 +42,27 @@ function wrapWithBase<R>(
   return (path, ...query): R => wrap(fn)(base, path, ...query);
 }
 
-async function fetchJson(path: string): Promise<any> {
-  let response = await fetch(path);
-  // TODO: probably worth putting some more fancy error handling here
-  return response.json();
-}
-
 // Public, unauthenticated endpoints (rallies, news) live under /api/public/v1.
+// Their CORS response is a bare wildcard origin, which browsers reject
+// outright alongside a credentialed request, so this must stay plain fetch.
 export const spannerPublicApiFetch = wrapWithBase<Promise<any>>(
   `${spannerApiOrigin}/api/public/v1`,
-  fetchJson,
+  async (path) => {
+    let response = await fetch(path);
+    // TODO: probably worth putting some more fancy error handling here
+    return response.json();
+  },
 );
 
 // /me needs a real logged-in session and isn't under the public/v1 prefix.
+// credentials: "include" is what actually gets the SameSite=Lax session
+// cookie sent on this cross-origin request — fetch() otherwise defaults to
+// same-origin and silently drops it.
 export const spannerApiFetch = wrapWithBase<Promise<any>>(
   `${spannerApiOrigin}/api`,
-  fetchJson,
+  async (path) => {
+    let response = await fetch(path, { credentials: "include" });
+    // TODO: probably worth putting some more fancy error handling here
+    return response.json();
+  },
 );
