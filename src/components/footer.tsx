@@ -2,17 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FacebookIcon } from "lucide-react";
 import { wwlrcFacebookGroupLink } from "@/spanner/wwlrc";
-
-const sponsors = [
-  "Abergavenny Brake & Clutch",
-  "Caldicot Windows & Building Services",
-  "Muddy Series 4X4 Parts",
-  "Whitecliff 4X4",
-  "Lewis Thomas Spares",
-  "AK Inspection Services Ltd",
-  "A.Morgan Property Maintenance",
-  "Wye Valley Carpet & Upholstery Cleaners",
-];
+import { sponsors } from "@/app/sponsors/data";
 
 const exploreLinks = [
   { href: "/about", label: "About the club" },
@@ -89,7 +79,7 @@ export default function Footer() {
             With thanks to our sponsors
           </span>
           <span className="leading-loose text-[#8fa8b5]">
-            {sponsors.join(" · ")}
+            {sponsors.map((s) => s.alt).join(" · ")}
           </span>
         </div>
       </div>
