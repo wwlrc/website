@@ -228,6 +228,11 @@ var people: Person[] = [
     roles: ["General Committee Member"],
     picture: "/mugshots/davidh.png",
   },
+  {
+    name: "Cerian",
+    roles: ["General Committee Member"],
+    picture: "/mugshots/nophoto.png",
+  },
 ];
 
 export default function About() {
