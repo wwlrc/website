@@ -166,7 +166,7 @@ var people: Person[] = [
   {
     name: "Keith Baldwin",
     roles: ["Chief Scrutineer"],
-    picture: "/mugshots/nophoto.png",
+    picture: "/mugshots/keithb.jpg",
   },
   {
     name: "Paul Davies",
@@ -211,7 +211,7 @@ var people: Person[] = [
   {
     name: "Debra Ireland",
     roles: ["Safety & Safeguarding Officer"],
-    picture: "/mugshots/nophoto.png",
+    picture: "/mugshots/debrai.jpg",
   },
   {
     name: "Malcolm Knight",
