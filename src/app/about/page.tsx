@@ -139,14 +139,14 @@ var eventTypes = [
 
 var people: Person[] = [
   {
-    name: "Toby Fuller",
-    roles: ["Chair", "Annual Event Liason", "Equipment"],
-    picture: "/mugshots/tobyf.jpg",
+    name: "Ashley Morgan",
+    roles: ["Chair"],
+    picture: "/mugshots/ashleym.jpg",
   },
   {
-    name: "Ashley Morgan",
-    roles: ["Vice Chair", "Assistant Competition Secretary"],
-    picture: "/mugshots/ashleym.jpg",
+    name: "Toby Fuller",
+    roles: ["Vice Chair", "Equipment"],
+    picture: "/mugshots/tobyf.jpg",
   },
   {
     name: "John Ireland",
@@ -160,12 +160,27 @@ var people: Person[] = [
   },
   {
     name: "Anthony Knight",
-    roles: ["Chief Marshal", "Chief Scrutineer"],
+    roles: ["Chief Marshal"],
     picture: "/mugshots/anthonyk.png",
   },
   {
-    name: "John Davies",
+    name: "Keith Baldwin",
+    roles: ["Chief Scrutineer"],
+    picture: "/mugshots/keithb.jpg",
+  },
+  {
+    name: "Paul Davies",
     roles: ["Competition Secretary"],
+    picture: "/mugshots/pauld.png",
+  },
+  {
+    name: "Adam Godwin",
+    roles: ["Assistant Competition Secretary"],
+    picture: "/mugshots/adamg.jpg",
+  },
+  {
+    name: "John Davies",
+    roles: ["W&W Challenge Liaison"],
     picture: "/mugshots/johnd.png",
   },
   {
@@ -194,9 +209,9 @@ var people: Person[] = [
     picture: "/mugshots/richardh.png",
   },
   {
-    name: "Adam Godwin",
-    roles: ["General Committee Member"],
-    picture: "/mugshots/adamg.jpg",
+    name: "Debra Ireland",
+    roles: ["Safety & Safeguarding Officer"],
+    picture: "/mugshots/debrai.jpg",
   },
   {
     name: "Malcolm Knight",
@@ -214,12 +229,12 @@ var people: Person[] = [
     picture: "/mugshots/nophoto.png",
   },
   {
-    name: "Paul Davies",
+    name: "Ray Godwin",
     roles: ["General Committee Member"],
-    picture: "/mugshots/pauld.png",
+    picture: "/mugshots/nophoto.png",
   },
   {
-    name: "Jack Llewellyn",
+    name: "Levi Davies",
     roles: ["General Committee Member"],
     picture: "/mugshots/nophoto.png",
   },
